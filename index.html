@@ -63,15 +63,18 @@ footer b{color:var(--ord)}
 <div class="in">
 <header>
 <h1>Jeder bei Kriwet bekommt <span>sein eigenes Team.</span></h1>
-<p class="sub">Team Kriwet AI in 57 Sekunden – was es ist und was es dir bringt.</p>
+<p class="sub">Team Kriwet AI in zwei Minuten – was es ist und was es dir bringt. Ton an!</p>
 </header>
-<video id="v" controls playsinline preload="metadata" poster="poster.jpg" src="film.mp4"></video>
+<video id="v" controls playsinline preload="metadata" poster="poster-erklaer.jpg" src="erklaervideo.mp4"></video>
 <div class="row">
 <button class="btn" onclick="var v=document.getElementById('v');v.currentTime=0;v.play()">▶ Film abspielen</button>
 <button class="btn ghost" onclick="zeig(0)">Handbuch Blatt für Blatt</button>
 <a class="btn ghost" href="Handbuch_Team-Kriwet-AI_R2.8.pdf" target="_blank" rel="noopener">Handbuch als PDF</a>
-<a class="btn ghost" href="film.mp4" download="Team_Kriwet_AI_Imagefilm.mp4">Film herunterladen</a>
+<a class="btn ghost" href="erklaervideo.mp4" download="Team_Kriwet_AI_Erklaervideo.mp4">Video herunterladen</a>
 </div>
+<h2>Die Kurzfassung – 57 Sekunden, ohne Ton</h2>
+<p>Für zwischendurch: das Team auf einen Blick.</p>
+<video id="v2" controls playsinline preload="none" poster="poster.jpg" src="film.mp4"></video>
 <p class="hint">Weiter runter: das ganze Handbuch zum Durchscrollen<b>↓</b></p>
 
 <h2>Das Handbuch – in Ruhe, Blatt für Blatt</h2>
@@ -104,7 +107,7 @@ function setz(i,dir){cur=Math.max(0,Math.min(N-1,i));im.className='';void im.off
  if(dir)im.className=dir>0?'rein-r':'rein-l';document.getElementById('zahl').textContent=(cur+1)+' / '+N;
  document.getElementById('zur').disabled=cur==0;document.getElementById('vor').disabled=cur==N-1;
  if(cur<N-1){var p=new Image();p.src=src(cur+1)}}
-function zeig(i){var v=document.getElementById('v');if(!v.paused)v.pause();setz(i,1);lb.classList.add('auf');document.body.style.overflow='hidden'}
+function zeig(i){['v','v2'].forEach(function(k){var v=document.getElementById(k);if(v&&!v.paused)v.pause()});setz(i,1);lb.classList.add('auf');document.body.style.overflow='hidden'}
 function zu(){lb.classList.remove('auf');document.body.style.overflow=''}
 function geh(d){if(cur+d<0||cur+d>N-1)return;setz(cur+d,d)}
 document.addEventListener('keydown',function(e){if(!lb.classList.contains('auf'))return;if(e.key=='ArrowRight'||e.key==' ')geh(1);if(e.key=='ArrowLeft')geh(-1);if(e.key=='Escape')zu()});
