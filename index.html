@@ -112,6 +112,15 @@ h2{font-size:clamp(30px,4.6vw,56px);line-height:1.04;letter-spacing:-.03em;margi
 .auftrag .satz small{display:block;color:#B0620A;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
 .auftrag .leer{color:#7A7068;font-size:15px}
 .stand{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 22px}.stand span{color:var(--mut);font-weight:700;font-size:14px;margin-right:4px}.stand button{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--tx);border-radius:999px;padding:10px 16px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer}.stand button:hover{background:var(--or);color:#1a1006;border-color:var(--or)}
+.phasen{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:1000px){.phasen{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.phasen{grid-template-columns:1fr}}
+.ph{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--or);border-radius:18px;padding:22px;display:flex;flex-direction:column}
+.ph small{color:var(--or2);font-weight:900;font-size:13px;letter-spacing:.1em}.ph b{font-size:21px;font-weight:900;margin:6px 0 12px;letter-spacing:-.01em}
+.ph ul{margin:0 0 16px;padding:0;list-style:none}.ph li{color:#CFC6BB;font-size:15px;line-height:1.45;padding:5px 0 5px 16px;position:relative}.ph li:before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--or)}
+.ph span{margin-top:auto;color:var(--mut);font-size:13px;font-weight:700}
+.tief{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}@media(max-width:860px){.tief{grid-template-columns:1fr}}
+.tf{background:linear-gradient(135deg,rgba(240,138,24,.14),rgba(255,255,255,.02));border:1px solid rgba(240,138,24,.3);border-radius:22px;padding:28px}
+.tf h3{font-size:clamp(22px,2.4vw,28px);line-height:1.15;margin:0 0 12px;font-weight:900;letter-spacing:-.02em}.tf p{color:#D8CFC4;line-height:1.6;margin:0;font-size:16px}.tf p.eyebrow{color:var(--or2);margin-bottom:10px;font-size:12px}
 .profi{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
 @media(max-width:900px){.profi{grid-template-columns:1fr}}
 .ehrlich{margin-top:22px;border-left:4px solid var(--or);padding:6px 0 6px 18px;color:#D8CFC4;font-size:17px;line-height:1.55;max-width:70ch}
@@ -223,12 +232,12 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div></section>
 
 <section id="buero"><div class="w">
-<p class="eyebrow rv">Ein Gedankenspiel</p>
+<p class="eyebrow rv">Planung · Projektierung · Steuerung · kaufmännische Abwicklung</p>
 <h2 class="rv">Ein Planungsbüro <em>im eigenen Haus.</em></h2>
 <p class="sub rv">Stell dir das Team wie ein Planungs- und Projektmanagement-Büro vor, das wir bei uns integriert haben. Du beauftragst es wie einen externen Dienstleister. Nur ohne Angebot einholen, ohne Wartezeit, ohne Rechnung. Und es steht jedem von uns voll zur Verfügung.</p>
-<p class="sub rv" style="margin-top:-22px"><b style="color:var(--tx)">Ein Fallbeispiel:</b> Tipp an, was du für dein Projekt brauchst. So könntest du das Team in deine eigene Arbeit einbauen.</p>
+<p class="sub rv" style="margin-top:-22px"><b style="color:var(--tx)">Ein Gedankenspiel als Fallbeispiel:</b> Tipp an, was du für dein Projekt brauchst. So könntest du das Team in deine eigene Arbeit einbauen.</p>
 <p class="sub rv" style="margin-top:-22px">Jede Leistung gibt es einzeln. Nur eine Kostenschätzung? Geht. Nur ein Angebot? Auch. Werkplanung und Bauzeitenplan nimmst du dazu, wenn dein Projekt so weit ist.</p>
-<div class="stand rv"><span>Je nach Projektstand:</span><button type="button" onclick="vor([0])">Nur Kostenschätzung</button><button type="button" onclick="vor([2])">Nur Angebot</button><button type="button" onclick="vor([2,3,5])">Bis zur Vergabe</button><button type="button" onclick="vor([2,3,4,5,6])">Bis zur Ausführung</button></div>
+<div class="stand rv"><span>Je nach Projektstand:</span><button type="button" onclick="vor([0])">Nur Kostenschätzung</button><button type="button" onclick="vor([2])">Nur Angebot</button><button type="button" onclick="vor([2,3,5])">Bis zur Vergabe</button><button type="button" onclick="vor([2,3,4,5,6,7])">Bis zur Ausführung</button></div>
 <div class="buero">
 <div class="bst rv" id="bst"></div>
 <div class="auftrag rv d1" aria-live="polite">
@@ -240,6 +249,18 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <div class="wz rv"><b>Nichts ohne Quelle</b><span>Jede Menge hat einen Planbezug, jeder Preis eine Herkunft. Was geschätzt ist, steht als geschätzt drin.</span></div>
 <div class="wz rv d1"><b>Das Büro sagt, was fehlt</b><span>Schnittstellen zwischen den Gewerken erkennt es selbst. Fehlt im LV eine Leistung, die auf der Baustelle anfällt, steht sie als Hinweis drin.</span></div>
 <div class="wz rv d2"><b>Fachsprache, keine Prosa</b><span>Texte, die ein Nachunternehmer versteht und ein Bauherr prüfen kann.</span></div>
+</div>
+<h2 class="rv" style="margin-top:80px">Vom ersten Plan <em>bis zur Abrechnung.</em></h2>
+<p class="sub rv">Das Büro begleitet ein Projekt durch alle vier Phasen. Du steigst ein, wo du gerade stehst.</p>
+<div class="phasen">
+<div class="ph rv"><small>01</small><b>Planung</b><ul><li>Kostenschätzung je Gewerk</li><li>Mengen und Massen mit Planbezug</li><li>Werkplanung als Plansatz</li></ul><span>Konrad · Ernst</span></div>
+<div class="ph rv d1"><small>02</small><b>Projektierung</b><ul><li>Angebot und Kalkulation, positionsgenau</li><li>LV des Kunden per GAEB einlesen</li><li>Angebot per GAEB zurückgeben</li></ul><span>Konrad</span></div>
+<div class="ph rv d2"><small>03</small><b>Steuerung</b><ul><li>Bauzeitenplan nach Gewerken</li><li>Offene Punkte und Fristen im Blick</li><li>Ein Ansprechpartner fürs Projekt</li></ul><span>Hasso · Anke</span></div>
+<div class="ph rv d3"><small>04</small><b>Kaufmännische Abwicklung</b><ul><li>Beauftragung der Nachunternehmer</li><li>Angebot und Bestellung in Taifun</li><li>Belege fürs Monatspaket</li></ul><span>Arnold · Beate</span></div>
+</div>
+<div class="tief">
+<div class="tf rv"><p class="eyebrow">GAEB rein, GAEB raus</p><h3>Kein LV mehr abtippen.</h3><p>Schickt der Kunde sein Leistungsverzeichnis als GAEB-Datei, liest das Büro es ein. Positionen, Mengen und Texte sind sofort da. Das fertige Angebot geht auf demselben Weg zurück, und über Arnold landet es in Taifun.</p></div>
+<div class="tf rv d1"><p class="eyebrow">Vom Angebot zur Beauftragung</p><h3>Aus dem Angebot wird die Bestellung. Aber nicht eins zu eins.</h3><p>Ein Angebot an den Kunden ist selten so geschnitten, wie der Nachunternehmer beauftragt wird. Das Büro baut die Beauftragung je Gewerk neu auf: mit exakten Mengen und Massen und mit Positionstexten, die zum Gewerk passen. Früher war das Stunden an Fleißarbeit. Jetzt prüfst du und gibst frei.</p></div>
 </div>
 <h2 class="rv" style="margin-top:80px">Und unser Kunde? <em>Der merkt den Unterschied.</em></h2>
 <p class="sub rv">Das Büro im Haus ist kein Selbstzweck. Am Ende zählt, was beim Kunden ankommt.</p>
@@ -338,20 +359,21 @@ function spiel(){var v=document.getElementById('v');setTimeout(function(){try{v.
 var BS=[
 ["Kostenschätzung","Lohnt sich das? Kostenrahmen je Gewerk.","Konrad",["Pläne oder Fotos","drei Sätze zum Vorhaben"],["Kostenrahmen je Gewerk mit Kennwerten, als PDF"],"eine Kostenschätzung",0],
 ["Mengen- und Massenauszug","Die Grundlage jeder Kalkulation.","Konrad",["Pläne im Maßstab"],["Massenliste je Gewerk als Excel, jede Menge mit Planbezug"],"einen Massenauszug",0],
-["Angebot und Kalkulation","Positionsgenau, mit Vortexten und Massen.","Konrad",["Pläne im Maßstab oder ein LV","die Anfrage vom Kunden"],["Angebot als PDF in Kriwet-Optik","Kalkulation als Excel, Zuschläge zum Selberdrehen","Hinweisblatt: was fehlt, was zusammenhängt"],"ein Angebot mit Kalkulation",0],
+["Angebot und Kalkulation","Positionsgenau, mit Vortexten und Massen.","Konrad",["Pläne im Maßstab oder ein LV, auch als GAEB-Datei","die Anfrage vom Kunden"],["Angebot als PDF in Kriwet-Optik","Kalkulation als Excel, Zuschläge zum Selberdrehen","auf Wunsch als GAEB-Datei","Hinweisblatt: was fehlt, was zusammenhängt"],"ein Angebot mit Kalkulation",0],
 ["Preisanfragen an Nachunternehmer","Je Gewerk ein fertiges Anfragepaket.","Konrad",["deine NU-Liste"],["je Gewerk LV-Auszug, Pläne und Anschreiben","Preisspiegel-Vorlage für den Rücklauf"],"die NU-Anfragen",1],
 ["Werkplanung","Details, Schnitte, Ansichten, Übersichtsplan.","Ernst",["Pläne im Maßstab"],["Plansatz mit Übersichtsplan, Wandansichten, Deckenspiegel – als PDF"],"die Werkplanung",1],
 ["Bauzeitenplan","Balkenplan nach Gewerken.","Hasso",["Starttermin und Eröffnung"],["Balkenplan mit Abhängigkeiten der Gewerke, als PDF und Excel"],"einen Bauzeitenplan",1],
-["Einspielen in Taifun","Ohne Abtippen, ohne doppelte Kunden.","Arnold",[],["Angebot und Bestellung stehen in Taifun"],"alles in Taifun",1]
+["Beauftragung der Nachunternehmer","Je Gewerk, mit exakten Mengen und eigenen Positionstexten.","Konrad",[],["je Gewerk eine Beauftragung mit exakten Mengen und Massen","Positionstexte so, wie der Nachunternehmer sie braucht"],"die NU-Beauftragungen",1],
+["Einspielen in Taifun","Ohne Abtippen, ohne doppelte Kunden.","Arnold",[],["Angebot und Bestellungen stehen in Taifun"],"alles in Taifun",1]
 ];
-var an=[false,false,true,false,false,false,false],bst=document.getElementById('bst'),au=document.getElementById('au');
+var an=[false,false,true,false,false,false,false,false],bst=document.getElementById('bst'),au=document.getElementById('au');
 function esc(x){return x.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 function einzig(a){var o=[];a.forEach(function(x){if(o.indexOf(x)<0)o.push(x)});return o}
 function mal(){
  var rein=[],raus=[],wer=["Hasso"],was=[];
  var brauchtA=false;BS.forEach(function(b,i){if(an[i]){rein=rein.concat(b[3]);raus=raus.concat(b[4]);wer.push(b[2]);was.push(b[5]);if(b[6])brauchtA=true}});
  if(brauchtA&&!an[2])rein.push('das fertige Angebot');
- if(rein.indexOf('Pläne im Maßstab oder ein LV')>=0)rein=rein.filter(function(x){return x!='Pläne im Maßstab'});
+ if(rein.indexOf('Pläne im Maßstab oder ein LV, auch als GAEB-Datei')>=0)rein=rein.filter(function(x){return x!='Pläne im Maßstab'});
  wer.push("Anke");
  if(!was.length){au.innerHTML='<p class="leer">Tipp links an, was du brauchst. Dann siehst du hier, was du reingibst und was zurückkommt.</p>';return}
  var satz=was.length==1?was[0]:was.slice(0,-1).join(", ")+" und "+was[was.length-1];
