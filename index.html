@@ -121,6 +121,15 @@ h2{font-size:clamp(30px,4.6vw,56px);line-height:1.04;letter-spacing:-.03em;margi
 .tief{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}@media(max-width:860px){.tief{grid-template-columns:1fr}}
 .tf{background:linear-gradient(135deg,rgba(240,138,24,.14),rgba(255,255,255,.02));border:1px solid rgba(240,138,24,.3);border-radius:22px;padding:28px}
 .tf h3{font-size:clamp(22px,2.4vw,28px);line-height:1.15;margin:0 0 12px;font-weight:900;letter-spacing:-.02em}.tf p{color:#D8CFC4;line-height:1.6;margin:0;font-size:16px}.tf p.eyebrow{color:var(--or2);margin-bottom:10px;font-size:12px}
+.regler{margin-top:18px;background:var(--cream);color:#201E1C;border-radius:24px;padding:clamp(24px,4vw,44px)}
+.regler .eyebrow{color:#B0620A;margin-bottom:10px}.regler h3{font-size:clamp(26px,3.4vw,40px);font-weight:900;letter-spacing:-.02em;margin:0 0 62px;line-height:1.1}.regler h3 em{font-style:normal;color:#F08A18}
+.spur{position:relative;height:14px;border-radius:999px;background:rgba(0,0,0,.1);margin:0 0 18px}
+.fuell{position:absolute;left:0;top:0;bottom:0;width:62%;border-radius:999px;background:linear-gradient(90deg,#FFB254,#F08A18)}
+.knopf{position:absolute;left:62%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:#201E1C;border:4px solid #F5F0E8;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.knopf span{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#201E1C;color:#F5F0E8;font-weight:800;font-size:12px;padding:5px 10px;border-radius:999px}
+.pole{display:flex;justify-content:space-between;gap:24px;margin-bottom:24px}.pole div{max-width:32ch}.pole div:last-child{text-align:right}
+.pole b{display:block;font-size:16px}.pole span{color:#7A7068;font-size:14px;line-height:1.45}
+.regler>p:last-child{font-size:17px;line-height:1.6;margin:0;max-width:70ch}
 .profi{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
 @media(max-width:900px){.profi{grid-template-columns:1fr}}
 .ehrlich{margin-top:22px;border-left:4px solid var(--or);padding:6px 0 6px 18px;color:#D8CFC4;font-size:17px;line-height:1.55;max-width:70ch}
@@ -261,6 +270,13 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <div class="tief">
 <div class="tf rv"><p class="eyebrow">GAEB rein, GAEB raus</p><h3>Kein LV mehr abtippen.</h3><p>Schickt der Kunde sein Leistungsverzeichnis als GAEB-Datei, liest das Büro es ein. Positionen, Mengen und Texte sind sofort da. Das fertige Angebot geht auf demselben Weg zurück, und über Arnold landet es in Taifun.</p></div>
 <div class="tf rv d1"><p class="eyebrow">Vom Angebot zur Beauftragung</p><h3>Aus dem Angebot wird die Bestellung. Aber nicht eins zu eins.</h3><p>Ein Angebot an den Kunden ist selten so geschnitten, wie der Nachunternehmer beauftragt wird. Das Büro baut die Beauftragung je Gewerk neu auf: mit exakten Mengen und Massen und mit Positionstexten, die zum Gewerk passen. Früher war das Stunden an Fleißarbeit. Jetzt prüfst du und gibst frei.</p></div>
+</div>
+<div class="regler rv">
+<p class="eyebrow">Die richtige Balance</p>
+<h3>Wie viel du eingreifst, <em>bestimmst du.</em></h3>
+<div class="spur" role="img" aria-label="Regler zwischen eng führen und eigenständig laufen lassen, heutige Einstellung: ausbalanciert, leicht Richtung eigenständig"><div class="fuell"></div><div class="knopf"><span>Heute: ausbalanciert</span></div></div>
+<div class="pole"><div><b>Du führst eng</b><span>Viel Rückmeldung, jeder Schritt abgestimmt. Maximale Kontrolle, mehr Aufwand für dich.</span></div><div><b>Das Team läuft eigenständig</b><span>Kaum Eingriff, hohes Tempo. Je autarker, desto größer das Risiko, dass Qualität verloren geht.</span></div></div>
+<p>Das Team kann sehr eigenständig arbeiten. Wir haben es bewusst so eingestellt, dass du nur an den entscheidenden Stellen draufschaust und die Richtung gibst. Das kostet dich wenig Zeit und hält die Qualität auf hohem Niveau. Diesen Punkt zu treffen, ist die eigentliche Kunst. Und wir justieren ihn laufend nach.</p>
 </div>
 <h2 class="rv" style="margin-top:80px">Und unser Kunde? <em>Der merkt den Unterschied.</em></h2>
 <p class="sub rv">Das Büro im Haus ist kein Selbstzweck. Am Ende zählt, was beim Kunden ankommt.</p>
