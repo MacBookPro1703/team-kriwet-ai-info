@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Team Kriwet AI – dein Planungsbüro im Rechner</title>
+<meta name="description" content="Sechs KI-Kollegen für Ladenbau und Innenausbau: Kalkulation, Werkplanung, Projektgedächtnis, Steuerung. In fünf Minuten ausprobieren, vier Wochen kostenlos testen.">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0F0E0D">
+<meta property="og:title" content="Team Kriwet AI – dein Planungsbüro im Rechner">
+<meta property="og:description" content="Sechs KI-Kollegen, die rechnen, zeichnen und sich alles merken. In fünf Minuten ausprobieren.">
+<meta property="og:image" content="team/gruppe.jpg">
+<style>
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:500;font-display:swap;src:url(fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(fonts/inter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:800;font-display:swap;src:url(fonts/inter-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:900;font-display:swap;src:url(fonts/inter-latin-900-normal.woff2) format("woff2")}
+:root{--bg:#0F0E0D;--bg2:#171513;--card:#1D1A17;--line:rgba(255,255,255,.09);--tx:#F4EFE8;--mut:#A99F94;--or:#F08A18;--or2:#FFB254;--cream:#F5F0E8}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.w{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+.entwurf{background:#B0620A;color:#fff;font-size:13px;font-weight:600;text-align:center;padding:7px 14px;line-height:1.4}
+nav{position:sticky;top:0;z-index:30;background:rgba(15,14,13,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+nav .w{display:flex;align-items:center;gap:14px;height:64px}
+nav img{width:34px;height:34px;border-radius:6px}
+nav .brand{font-weight:800;letter-spacing:.04em;font-size:16px;line-height:1.1}
+nav .brand span{color:var(--or)}
+nav .brand small{display:block;font-weight:500;letter-spacing:.02em;color:var(--mut);font-size:12px}
+nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
+nav .links a{text-decoration:none;color:var(--mut);font-weight:600;font-size:14px}
+nav .links a:hover{color:var(--tx)}nav .links a.btn,nav .links a.btn:hover{color:#1a1006}
+@media(max-width:860px){nav .links a.opt{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;background:var(--or);color:#1a1006;font-weight:800;text-decoration:none;border:0;font-size:15px;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 28px rgba(240,138,24,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(240,138,24,.5)}
+.btn.g{background:rgba(255,255,255,.06);color:var(--tx);box-shadow:none;border:1px solid var(--line)}
+.btn.g:hover{background:rgba(255,255,255,.12)}
+.btn.s{padding:9px 16px;font-size:13px}
+.btn.d{background:#201E1C;color:#F4EFE8;box-shadow:none}
+.hero{position:relative;padding:64px 0 40px;overflow:hidden}
+.hero:before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-420px;background:radial-gradient(closest-side,rgba(240,138,24,.32),rgba(240,138,24,0));pointer-events:none}
+.hero:after{content:"";position:absolute;width:700px;height:700px;left:-320px;top:200px;background:radial-gradient(closest-side,rgba(255,178,84,.12),rgba(255,178,84,0));pointer-events:none}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid rgba(240,138,24,.45);color:var(--or2);font-weight:700;font-size:13px;letter-spacing:.04em;background:rgba(240,138,24,.08)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--or);animation:puls 2s infinite;display:inline-block}
+@keyframes puls{0%{box-shadow:0 0 0 0 rgba(240,138,24,.7)}70%{box-shadow:0 0 0 10px rgba(240,138,24,0)}100%{box-shadow:0 0 0 0 rgba(240,138,24,0)}}
+h1{font-size:clamp(40px,7.4vw,92px);line-height:.98;letter-spacing:-.035em;margin:22px 0 22px;font-weight:900;max-width:13ch}
+h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,var(--or),var(--or2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(18px,2.2vw,22px);line-height:1.5;color:#D8CFC4;max-width:44ch;margin:0 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.klein{color:var(--mut);font-size:14px;margin:16px 0 0}
+.film{position:relative;margin-top:54px;border-radius:24px;padding:6px;background:linear-gradient(135deg,rgba(240,138,24,.7),rgba(255,255,255,.08) 40%,rgba(240,138,24,.35));box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 120px rgba(240,138,24,.15)}
+.film img{display:block;width:100%;border-radius:19px}
+.film .tag{position:absolute;left:22px;top:-14px;background:var(--or);color:#1a1006;font-weight:800;font-size:12px;letter-spacing:.06em;padding:6px 12px;border-radius:999px}
+section{padding:90px 0}
+.eyebrow{color:var(--or2);font-weight:800;letter-spacing:.14em;font-size:13px;text-transform:uppercase;margin:0 0 14px}
+h2{font-size:clamp(30px,4.6vw,56px);line-height:1.04;letter-spacing:-.03em;margin:0 0 18px;font-weight:900;max-width:18ch}
+.sub{color:var(--mut);font-size:18px;line-height:1.55;max-width:56ch;margin:0 0 40px}
+.brief{position:relative;background:var(--cream);color:#201E1C;border-radius:28px;padding:clamp(28px,5vw,64px);overflow:hidden}
+.brief:before{content:"„";position:absolute;right:28px;top:-40px;font-size:260px;font-weight:900;color:rgba(240,138,24,.18);line-height:1}
+.brief p{font-size:clamp(19px,2.3vw,24px);line-height:1.55;margin:0 0 18px;max-width:52ch;position:relative}
+.brief p.big{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.brief .sig{display:flex;align-items:center;gap:14px;margin-top:28px;font-weight:700}
+.brief .sig b{display:block;font-size:20px}.brief .sig span{color:#7A7068;font-weight:500}
+.brief .sig img{width:48px;height:48px;border-radius:12px}
+.zahlen{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+@media(max-width:820px){.zahlen{grid-template-columns:repeat(2,1fr)}}
+.zahl{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+.zahl b{display:block;font-size:clamp(34px,4.5vw,50px);font-weight:900;letter-spacing:-.03em;color:var(--or2)}
+.zahl span{color:var(--mut);font-size:15px;line-height:1.4}
+/* Kostprobe */
+.probe{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:start}
+@media(max-width:900px){.probe{grid-template-columns:1fr}}
+.wahl{display:flex;flex-direction:column;gap:10px}
+.pw{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--tx);font-family:inherit;cursor:pointer;transition:border-color .2s,background .2s}
+.pw:hover{border-color:rgba(240,138,24,.5)}
+.pw[aria-selected=true]{background:rgba(240,138,24,.12);border-color:var(--or)}
+.pw i{flex:0 0 auto;font-style:normal;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--or2)}
+.pw[aria-selected=true] i{background:var(--or);color:#1a1006}
+.pw b{display:block;font-size:18px}.pw span{display:block;color:var(--mut);font-size:14px;margin-top:3px;line-height:1.4}
+.zettel{background:var(--cream);color:#201E1C;border-radius:22px;padding:24px}
+.zettel h3{margin:0 0 4px;font-size:22px;font-weight:900}
+.zettel .an{color:#7A7068;font-size:14px;margin-bottom:14px}
+.zettel textarea{display:block;width:100%;height:290px;resize:vertical;border:1px solid rgba(0,0,0,.15);border-radius:14px;background:#fff;color:#201E1C;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13.5px;line-height:1.5;padding:14px}
+.zettel .zeile{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.zettel .ok{color:#3E6B3A;font-weight:700;font-size:14px}
+.schritte3{counter-reset:s;list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:560px){.schritte3{grid-template-columns:1fr}}
+.schritte3 li{counter-increment:s;background:#fff;border-radius:12px;padding:12px 12px 12px 44px;position:relative;font-size:14.5px;line-height:1.4;font-weight:600}
+.schritte3 li:before{content:counter(s);position:absolute;left:12px;top:11px;width:22px;height:22px;border-radius:50%;background:#F08A18;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center}
+.danach{margin-top:26px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:linear-gradient(135deg,rgba(240,138,24,.16),rgba(255,255,255,.02));border:1px solid rgba(240,138,24,.35);border-radius:22px;padding:24px 28px}
+.danach p{margin:0;max-width:62ch;line-height:1.55;color:#D8CFC4}.danach b{color:var(--tx)}
+/* Team */
+.name{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 34px}
+.name label{color:var(--mut);font-weight:700;font-size:15px}
+.name input{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;color:var(--tx);font-family:inherit;font-size:16px;padding:11px 18px;min-width:260px}
+.name input:focus{outline:2px solid var(--or);outline-offset:1px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:980px){.team{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.team{grid-template-columns:1fr}}
+.k{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s;display:flex;flex-direction:column}
+.k:hover{transform:translateY(-6px);border-color:rgba(240,138,24,.5)}
+.k .img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.k .img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.k:hover .img img{transform:scale(1.06)}
+.k .img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(29,26,23,.95))}
+.k .rolle{position:absolute;left:16px;top:16px;z-index:2;background:rgba(15,14,13,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);color:var(--or2);font-weight:800;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:999px}
+.k .body{padding:4px 22px 24px;margin-top:-34px;position:relative;z-index:2;display:flex;flex-direction:column;flex:1}
+.k h3{font-size:30px;margin:0 0 8px;font-weight:900;letter-spacing:-.02em}
+.k p{color:#CFC6BB;line-height:1.55;margin:0 0 16px;font-size:16px}
+.k .sagt{margin-top:auto;background:rgba(240,138,24,.1);border:1px solid rgba(240,138,24,.25);border-radius:14px;padding:12px 14px;font-size:15px}
+.k .sagt small{display:block;color:var(--or2);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.k .beta{color:var(--mut);font-size:12px;font-weight:600;margin-left:8px;vertical-align:middle}
+/* Planungsbüro */
+.buero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+@media(max-width:900px){.buero{grid-template-columns:1fr}}
+.bst{display:flex;flex-direction:column;gap:10px}
+.bs{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--tx);font-family:inherit;cursor:pointer;transition:border-color .2s,background .2s}
+.bs:hover{border-color:rgba(240,138,24,.5)}
+.bs i{flex:0 0 auto;width:26px;height:26px;border-radius:8px;border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:900;font-size:15px;color:transparent}
+.bs[aria-pressed=true]{background:rgba(240,138,24,.12);border-color:var(--or)}
+.bs[aria-pressed=true] i{background:var(--or);border-color:var(--or);color:#201E1C}
+.bs b{display:block;font-size:17px}.bs span{display:block;color:var(--mut);font-size:14px;margin-top:2px;line-height:1.4}
+.bs em{margin-left:auto;font-style:normal;color:var(--or2);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.auftrag{position:sticky;top:88px;background:var(--cream);color:#201E1C;border-radius:22px;padding:26px}
+@media(max-width:900px){.auftrag{position:static}}
+.auftrag h3{margin:0 0 4px;font-size:22px;font-weight:900;letter-spacing:-.01em}
+.auftrag .an{color:#7A7068;font-size:14px;margin-bottom:18px}
+.auftrag h4{margin:18px 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#B0620A}
+.auftrag ul{margin:0;padding:0;list-style:none}
+.auftrag li{padding:7px 0 7px 22px;position:relative;line-height:1.4;font-size:15px;border-bottom:1px solid rgba(0,0,0,.07)}
+.auftrag li:before{content:"";position:absolute;left:2px;top:14px;width:8px;height:8px;border-radius:2px;background:#F08A18}
+.auftrag .wer{display:flex;flex-wrap:wrap;gap:8px}
+.auftrag .wer span{background:#201E1C;color:#F4EFE8;border-radius:999px;padding:6px 12px;font-weight:700;font-size:13px}
+.auftrag .satz{margin-top:18px;background:#fff;border-radius:14px;padding:14px 16px;font-weight:700;font-size:16px;line-height:1.45}
+.auftrag .satz small{display:block;color:#B0620A;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.auftrag .leer{color:#7A7068;font-size:15px}
+.bkopf{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;margin-bottom:26px}
+.bkopf .sub:last-child{margin-bottom:0}
+@media(max-width:900px){.bkopf{grid-template-columns:1fr;gap:26px}}
+.clip{border-radius:22px;padding:5px;background:linear-gradient(135deg,rgba(240,138,24,.7),rgba(255,255,255,.08) 45%,rgba(240,138,24,.35));box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.clip video{display:block;width:100%;aspect-ratio:16/9;border-radius:18px 18px 0 0;background:#000;cursor:pointer}
+.uhr{display:grid;grid-template-columns:repeat(4,1fr);background:#141210}
+.uhr span{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:8px 0;color:#6E655C;border-top:3px solid rgba(255,255,255,.08);transition:color .3s,border-color .3s,background .3s}
+.uhr span.an{color:#201E1C;background:var(--or2);border-color:var(--or)}
+.uhr span:nth-child(3).an{color:#fff;background:#3A4E9A;border-color:#7F95E8}
+.rund24{margin:0 0 26px;color:#D8CFC4;font-size:17px;line-height:1.55;max-width:70ch;border-left:4px solid #7F95E8;padding:4px 0 4px 16px}.rund24 b{color:var(--tx)}
+.cl-fuss{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);border-radius:0 0 18px 18px;padding:14px 16px}
+.cl-fuss b{display:block;font-size:16px}.cl-fuss span{color:var(--mut);font-size:13px}
+.stand{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 22px}.stand span{color:var(--mut);font-weight:700;font-size:14px;margin-right:4px}.stand button{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--tx);border-radius:999px;padding:10px 16px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer}.stand button:hover{background:var(--or);color:#1a1006;border-color:var(--or)}
+.phasen{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:1000px){.phasen{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.phasen{grid-template-columns:1fr}}
+.ph{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--or);border-radius:18px;padding:22px;display:flex;flex-direction:column}
+.ph small{color:var(--or2);font-weight:900;font-size:13px;letter-spacing:.1em}.ph b{font-size:21px;font-weight:900;margin:6px 0 12px;letter-spacing:-.01em}
+.ph ul{margin:0 0 16px;padding:0;list-style:none}.ph li{color:#CFC6BB;font-size:15px;line-height:1.45;padding:5px 0 5px 16px;position:relative}.ph li:before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--or)}
+.ph span{margin-top:auto;color:var(--mut);font-size:13px;font-weight:700}
+.tief{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:860px){.tief{grid-template-columns:1fr}}
+.tf{background:linear-gradient(135deg,rgba(240,138,24,.14),rgba(255,255,255,.02));border:1px solid rgba(240,138,24,.3);border-radius:22px;padding:28px}
+.tf h3{font-size:clamp(22px,2.4vw,28px);line-height:1.15;margin:0 0 12px;font-weight:900;letter-spacing:-.02em}.tf p{color:#D8CFC4;line-height:1.6;margin:0;font-size:16px}.tf p.eyebrow{color:var(--or2);margin-bottom:10px;font-size:12px}
+.grid2{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.grid2{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+.wz{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.wz b{display:flex;align-items:center;gap:10px;font-size:18px;margin-bottom:6px}
+.wz b:before{content:"";width:10px;height:10px;border-radius:3px;background:var(--or);flex:0 0 auto}
+.wz span{color:var(--mut);line-height:1.5;font-size:15px}
+.regeln{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:700px){.regeln{grid-template-columns:1fr}}
+.rg{display:flex;gap:16px;align-items:flex-start;background:linear-gradient(135deg,rgba(240,138,24,.1),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:18px;padding:22px}
+.rg i{font-style:normal;flex:0 0 auto;width:40px;height:40px;border-radius:12px;background:var(--or);color:#1a1006;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:18px}
+.rg b{display:block;font-size:18px;margin-bottom:4px}.rg span{color:var(--mut);line-height:1.5;font-size:15px}
+/* Schwarm */
+.schwarm{background:var(--cream);color:#201E1C;border-radius:28px;padding:clamp(26px,4.5vw,56px);display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+@media(max-width:900px){.schwarm{grid-template-columns:1fr}}
+.schwarm .eyebrow{color:#B0620A}.schwarm h2{max-width:16ch}.schwarm h2 em{background:none;color:#F08A18}
+.schwarm p{font-size:18px;line-height:1.6;margin:0 0 14px;max-width:54ch}
+.schwarm ul{list-style:none;margin:0;padding:0}
+.schwarm li{background:#fff;border-radius:14px;padding:14px 16px 14px 44px;margin-bottom:10px;position:relative;font-size:15.5px;line-height:1.45}
+.schwarm li b{display:block}
+.schwarm li:before{content:"✓";position:absolute;left:14px;top:13px;width:20px;height:20px;border-radius:50%;background:#F08A18;color:#fff;font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center}
+.schwarm li.nie:before{content:"✕";background:#201E1C}
+.marke{display:inline-block;background:#201E1C;color:#F4EFE8;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;margin-left:8px;vertical-align:middle}
+.haken{display:flex;gap:14px;align-items:flex-start;background:#fff;border:2px solid rgba(0,0,0,.12);border-radius:16px;padding:16px 18px;cursor:pointer;margin-top:22px;max-width:54ch}
+.haken input{position:absolute;opacity:0;width:1px;height:1px}
+.haken .box{flex:0 0 auto;width:28px;height:28px;border-radius:8px;border:2px solid #A99F94;display:flex;align-items:center;justify-content:center;font-weight:900;color:transparent;margin-top:2px}
+.haken input:checked~.box{background:#F08A18;border-color:#F08A18;color:#fff}
+.haken input:focus-visible~.box{outline:2px solid #201E1C;outline-offset:2px}
+.haken b{display:block;font-size:17px}.haken small{display:block;color:#7A7068;font-size:14.5px;line-height:1.45;margin-top:3px}
+.schwarm p.hk{font-size:14px;color:#7A7068;margin:10px 0 0}
+.spar{margin-top:18px;display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;background:linear-gradient(135deg,rgba(240,138,24,.14),rgba(255,255,255,.02));border:1px solid rgba(240,138,24,.3);border-radius:22px;padding:clamp(22px,3.5vw,36px)}
+@media(max-width:900px){.spar{grid-template-columns:1fr}}
+.spar h3{font-size:clamp(22px,2.6vw,30px);line-height:1.15;margin:0 0 12px;font-weight:900;letter-spacing:-.02em}
+.spar p{color:#D8CFC4;line-height:1.6;margin:0;font-size:16px}.spar p.eyebrow{color:var(--or2);margin-bottom:10px;font-size:12px}
+.spar ul{list-style:none;margin:0;padding:0}.spar li{padding:12px 0 12px 20px;position:relative;border-bottom:1px solid var(--line);color:var(--mut);font-size:15px;line-height:1.45}.spar li:last-child{border:0}
+.spar li b{display:block;color:var(--tx);font-size:16.5px}.spar li:before{content:"";position:absolute;left:0;top:20px;width:8px;height:8px;border-radius:2px;background:var(--or)}
+/* Preise */
+.module{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px}
+.module span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600}
+.module span b{color:var(--or2);font-weight:800;margin-right:6px}
+.preise{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:1040px){.preise{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.preise{grid-template-columns:1fr}}
+.pr{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column}
+.pr.hl{background:var(--cream);color:#201E1C;border-color:var(--cream)}
+.pr small{color:var(--or2);font-weight:800;letter-spacing:.12em;font-size:12px;text-transform:uppercase}
+.pr.hl small{color:#B0620A}
+.pr h3{font-size:24px;font-weight:900;margin:8px 0 2px;letter-spacing:-.01em}
+.pr .eur{font-size:38px;font-weight:900;letter-spacing:-.03em;margin:10px 0 2px}
+.pr .je{color:var(--mut);font-size:14px;margin-bottom:16px}.pr.hl .je{color:#7A7068}
+.pr ul{list-style:none;margin:0 0 22px;padding:0}
+.pr li{padding:6px 0 6px 18px;position:relative;font-size:15px;line-height:1.45;color:#CFC6BB}.pr.hl li{color:#201E1C}
+.pr li:before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:2px;background:var(--or)}
+.pr .btn{margin-top:auto;justify-content:center}
+.fuss{color:var(--mut);font-size:14px;line-height:1.55;margin:22px 0 0;max-width:80ch}
+/* Kunden */
+.kunden{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:860px){.kunden{grid-template-columns:1fr}}
+.neu{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.neu h3{margin:0 0 4px;font-size:24px;font-weight:900}.neu .an{color:var(--mut);font-size:14px;margin-bottom:14px}
+.neu ul{margin:0;padding:0;list-style:none}.neu li{padding:9px 0 9px 18px;position:relative;border-bottom:1px solid var(--line);line-height:1.45;color:#D8CFC4;font-size:15.5px}
+.neu li:before{content:"";position:absolute;left:0;top:17px;width:7px;height:7px;border-radius:50%;background:var(--or)}
+.neu ol{margin:0;padding-left:20px;color:#D8CFC4;line-height:1.6;font-size:15.5px}.neu ol li{border:0;padding:4px 0 4px 4px}.neu ol li:before{display:none}
+/* FAQ */
+.faq{max-width:860px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-weight:700;font-size:19px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:6px;top:14px;font-size:28px;color:var(--or2);font-weight:500}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0 0 22px;color:#CFC6BB;line-height:1.6;max-width:68ch}
+.finale{text-align:center;position:relative;overflow:hidden}
+.finale:before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(240,138,24,.22),rgba(240,138,24,0));pointer-events:none}
+.finale h2{margin:0 auto 18px;max-width:none;font-size:clamp(44px,8vw,104px)}
+.finale .sub{margin:0 auto 34px}
+.finale .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:34px 0 calc(40px + env(safe-area-inset-bottom));color:var(--mut);font-size:14px;line-height:1.55}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer p{margin:14px 0 0;max-width:90ch;font-size:13px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.da{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.pill i{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="entwurf">Entwurf zur Abstimmung · Preise, Testzugang und Kundenbereich sind noch nicht live</div>
+
+<nav><div class="w">
+<img src="k.png" alt="Kriwet">
+<div class="brand">KRIWET<small>Team Kriwet AI</small></div>
+<div class="links"><a class="opt" href="#probe">Ausprobieren</a><a class="opt" href="#team">Team</a><a class="opt" href="#buero">Planungsbüro</a><a class="opt" href="#preise">Preise</a><a class="opt" href="#kunden">Für Kunden</a>
+<a class="btn s" href="#probe">Jetzt testen</a></div>
+</div></nav>
+
+<header class="hero"><div class="w">
+<span class="pill rv"><i></i>FÜR LADENBAU · INNENAUSBAU · GENERALUNTERNEHMER</span>
+<h1 class="rv d1">Stell sechs Leute ein. <em>Heute Nachmittag.</em></h1>
+<p class="lead rv d2">Team Kriwet AI ist ein fertig eingerichtetes Planungsbüro für deinen Rechner. Sechs KI-Kollegen, die rechnen, zeichnen, sich alles merken und dir den Schreibkram abnehmen. Gebaut auf der Baustelle, nicht im Labor.</p>
+<div class="cta rv d3"><a class="btn" href="#probe">In 5 Minuten ausprobieren</a><a class="btn g" href="#team">Das Team kennenlernen</a></div>
+<p class="klein rv d3">Kein Download, keine Anmeldung bei uns. Du brauchst nur Claude und einen Plan von einem echten Projekt.</p>
+<div class="film rv"><span class="tag">DEIN NEUES TEAM</span>
+<img src="team/gruppe.jpg" alt="Sechs Kollegen des Teams vor einer Baustelle" width="1280" height="620">
+</div>
+</div></header>
+
+<section><div class="w">
+<div class="brief rv">
+<p class="big">Ich bin seit 30 Jahren im Ladenbau. Programmieren kann ich nicht.</p>
+<p>Ich hab das hier gebaut, weil mir die Fleißarbeit zu viel wurde. Massen rausziehen, LV abtippen, Angebote schreiben, hinter jedem offenen Punkt herlaufen. Erst war's ein Helfer für die Kalkulation. Dann kam einer dazu, der sich alles merkt. Heute arbeite ich jeden Tag mit sechs von denen.</p>
+<p>Das ist kein Chatbot, dem du jedes Mal alles neu erklärst. Die kennen die Regeln vom Bau. Die fragen nach, wenn was fehlt. Und die sagen dir, wenn sie was nicht wissen. Genau den Stand, mit dem ich selbst arbeite, kannst du jetzt haben.</p>
+<div class="sig"><img src="icon-180.png" alt=""><div><b>Jörg Ebbing</b><span>Projektleitung · Kriwet</span></div></div>
+</div>
+<div class="zahlen">
+<div class="zahl rv"><b>6</b><span>Kollegen, die nur für dich arbeiten</span></div>
+<div class="zahl rv d1"><b>2 Tage → ½</b><span>So lange dauert eine Kalkulation bei mir heute noch</span></div>
+<div class="zahl rv d2"><b>1</b><span>Datenquelle. Angebot, Pläne und Bestellung passen zusammen</span></div>
+<div class="zahl rv d3"><b>100 %</b><span>deine Entscheidung. Du gibst alles frei</span></div>
+</div>
+</div></section>
+
+<section id="probe" style="background:var(--bg2)"><div class="w">
+<p class="eyebrow rv">Kostprobe · kostenlos · ohne uns</p>
+<h2 class="rv">Fünf Minuten. <em>Dann weißt du's.</em></h2>
+<p class="sub rv">Glaub mir nichts, probier's aus. Nimm einen Plan, ein LV oder deine Baustellennotizen von einem echten Projekt. Such dir einen Zettel aus, kopier ihn in Claude, und schau, was zurückkommt.</p>
+<div class="probe">
+<div class="wahl rv" role="tablist" id="wahl"></div>
+<div class="zettel rv d1">
+<h3 id="zt">Zettel</h3><div class="an" id="za"></div>
+<textarea id="zx" readonly spellcheck="false" aria-label="Text zum Kopieren"></textarea>
+<div class="zeile"><button type="button" class="btn d" id="kop">Zettel kopieren</button><a class="btn g" style="color:#201E1C;border-color:rgba(0,0,0,.2)" href="https://claude.ai/new" target="_blank" rel="noopener">Claude öffnen</a><span class="ok" id="kok" role="status"></span></div>
+<ol class="schritte3"><li>Zettel kopieren</li><li>In Claude einfügen, Datei dranhängen</li><li>Abschicken und staunen</li></ol>
+</div>
+</div>
+<div class="danach rv">
+<p><b>Das war ein einzelner Zettel.</b> Im Team kennen sich sechs davon untereinander. Sie merken sich dein Projekt, rechnen mit deinen Preisen, schreiben in deinem Layout und geben die Arbeit aneinander weiter. Das ist der Unterschied zwischen einem guten Trick und einem Büro.</p>
+<a class="btn" href="#preise">4 Wochen das ganze Team testen</a>
+</div>
+</div></section>
+
+<section id="team"><div class="w">
+<p class="eyebrow rv">Dein Team</p>
+<h2 class="rv">Darf ich vorstellen? <em id="tn1">Dein neues Team.</em></h2>
+<p class="sub rv" style="margin-bottom:22px">Du redest mit ihnen wie mit Kollegen. Ein Satz reicht, den Rest machen sie. Und sie arbeiten unter deinem Namen, nicht unter meinem.</p>
+<div class="name rv"><label for="fn">Wie heißt deine Firma?</label><input id="fn" type="text" maxlength="28" placeholder="z. B. Müller Innenausbau" autocomplete="organization"></div>
+<div class="team">
+<article class="k rv"><div class="img"><span class="rolle">Projektgedächtnis</span><img loading="lazy" src="team/anke.jpg" alt="Anke"></div><div class="body"><h3>Anke</h3><p>Merkt sich alles: was offen ist, wer dir was schuldet, welche Frist läuft. Nach ein paar Wochen weiß sie mehr über deine Projekte, als du dir je merken konntest.</p><div class="sagt"><small>Du sagst</small>„Was ist bei dem Projekt noch offen?“</div></div></article>
+<article class="k rv d1"><div class="img"><span class="rolle">Kalkulation</span><img loading="lazy" src="team/konrad.jpg" alt="Konrad"></div><div class="body"><h3>Konrad</h3><p>Pläne oder LV rein, fertiges Angebot raus. Mit Massen, Excel und GAEB. Aus zwei Tagen Kalkulation wird ein Nachmittag.</p><div class="sagt"><small>Du sagst</small>„Kalkulier das durch.“</div></div></article>
+<article class="k rv d2"><div class="img"><span class="rolle">Werkplanung</span><img loading="lazy" src="team/ernst.jpg" alt="Ernst"></div><div class="body"><h3>Ernst</h3><p>Wandansichten, Deckenspiegel, Boden, Sanitär. Als Plansatz, nach dem der Nachunternehmer ohne Rückfrage baut.</p><div class="sagt"><small>Du sagst</small>„Erst ein Muster Maler, dann der Rest.“</div></div></article>
+<article class="k rv"><div class="img"><span class="rolle">Projektmanagement</span><img loading="lazy" src="team/hasso.jpg" alt="Hasso"></div><div class="body"><h3>Hasso</h3><p>Du gibst ihm Pläne, ein LV oder ein paar Handyfotos. Er hält die Fäden zusammen und holt die anderen dazu. Ein Ansprechpartner fürs ganze Projekt.</p><div class="sagt"><small>Du sagst</small>„Hasso, neues Projekt Musterstadt.“</div></div></article>
+<article class="k rv d1"><div class="img"><span class="rolle">Belege</span><img loading="lazy" src="team/beate.jpg" alt="Beate"></div><div class="body"><h3>Beate<span class="beta">Beta</span></h3><p>Aus Quittungen und NU-Rechnungen wird ein geprüftes Paket für den Steuerberater. Monatspaket in Minuten.</p><div class="sagt"><small>Du sagst</small>„Beate, hier sind meine Quittungen vom Oktober.“</div></div></article>
+<article class="k rv d2"><div class="img"><span class="rolle">Taifun · Zusatzmodul</span><img loading="lazy" src="team/arnold.jpg" alt="Arnold"></div><div class="body"><h3>Arnold</h3><p>Für alle, die mit Taifun arbeiten: Was Konrad baut, spielt Arnold ein. Ohne Abtippen, ohne doppelte Kunden.</p><div class="sagt"><small>Du sagst</small>„Spiel das Angebot in Taifun ein.“</div></div></article>
+</div>
+</div></section>
+
+<section id="buero" style="background:var(--bg2)"><div class="w">
+<div class="bkopf"><div>
+<p class="eyebrow rv">Planung · Projektierung · Steuerung · kaufmännische Abwicklung</p>
+<h2 class="rv">Ein Planungsbüro <em>im eigenen Haus.</em></h2>
+<p class="sub rv">Stell dir das Team wie ein Planungs- und Projektmanagement-Büro vor, das bei dir im Haus sitzt. Du beauftragst es wie einen externen Dienstleister. Nur ohne Angebot einholen, ohne Wartezeit, ohne Rechnung je Auftrag.</p>
+<p class="sub rv" style="margin-top:-22px"><b style="color:var(--tx)">Spiel's einmal durch:</b> Tipp an, was du für dein Projekt brauchst. Rechts siehst du, was du reingibst und was zurückkommt.</p>
+</div>
+<div class="clip rv d1">
+<video id="v2" muted loop playsinline preload="none" poster="team/truppe.jpg" src="film-truppe.mp4"></video>
+<div class="uhr" id="uhr" aria-hidden="true"><span class="an">Tag</span><span>Abend</span><span>Nacht</span><span>Morgen</span></div>
+<div class="cl-fuss"><div><b>Die Truppe unter Volllast</b><span>Wenn du willst: rund um die Uhr</span></div><button type="button" class="btn s" id="v2b">▶ Mit Ton</button></div>
+</div>
+</div>
+<p class="rund24 rv"><b>24/7, wenn du willst.</b> Das Büro kennt keinen Feierabend. Du gibst abends den Auftrag raus, und morgens liegt das Ergebnis zur Prüfung da.</p>
+<div class="stand rv"><span>Je nach Projektstand:</span><button type="button" data-v="0">Nur Kostenschätzung</button><button type="button" data-v="2">Nur Angebot</button><button type="button" data-v="2,3,5">Bis zur Vergabe</button><button type="button" data-v="2,3,4,5,6">Bis zur Ausführung</button></div>
+<div class="buero">
+<div class="bst rv" id="bst"></div>
+<div class="auftrag rv d1" aria-live="polite">
+<h3>Dein Auftrag</h3><div class="an">an Hasso, der das Büro leitet</div>
+<div id="au"></div>
+</div>
+</div>
+<h2 class="rv" style="margin-top:80px">Vom ersten Plan <em>bis zur Abrechnung.</em></h2>
+<p class="sub rv">Das Büro begleitet ein Projekt durch alle vier Phasen. Du steigst ein, wo du gerade stehst.</p>
+<div class="phasen">
+<div class="ph rv"><small>01</small><b>Planung</b><ul><li>Kostenschätzung je Gewerk</li><li>Mengen und Massen mit Planbezug</li><li>Werkplanung als Plansatz</li></ul><span>Konrad · Ernst</span></div>
+<div class="ph rv d1"><small>02</small><b>Projektierung</b><ul><li>Angebot und Kalkulation, positionsgenau</li><li>LV des Kunden per GAEB einlesen</li><li>Angebot per GAEB zurückgeben</li></ul><span>Konrad</span></div>
+<div class="ph rv d2"><small>03</small><b>Steuerung</b><ul><li>Bauzeitenplan nach Gewerken</li><li>Offene Punkte und Fristen im Blick</li><li>Ein Ansprechpartner fürs Projekt</li></ul><span>Hasso · Anke</span></div>
+<div class="ph rv d3"><small>04</small><b>Kaufmännische Abwicklung</b><ul><li>Beauftragung der Nachunternehmer</li><li>Belege fürs Monatspaket</li><li>Mit Taifun: Angebot und Bestellung einspielen</li></ul><span>Konrad · Beate · Arnold</span></div>
+</div>
+</div></section>
+
+<section><div class="w">
+<p class="eyebrow rv">Wo es klick macht</p>
+<h2 class="rv">Vier Stellen, an denen du <em>nicht mehr zurück willst.</em></h2>
+<p class="sub rv">Jeder, der es ausprobiert, hat so einen Moment. Meistens einen von diesen.</p>
+<div class="tief">
+<div class="tf rv"><p class="eyebrow">GAEB rein, GAEB raus</p><h3>Kein LV mehr abtippen.</h3><p>Schickt der Kunde sein Leistungsverzeichnis als GAEB-Datei, liest das Büro es ein. Positionen, Mengen und Texte sind sofort da. Das fertige Angebot geht auf demselben Weg zurück.</p></div>
+<div class="tf rv d1"><p class="eyebrow">Vom Angebot zur Beauftragung</p><h3>Aus dem Angebot wird die Bestellung. Aber nicht eins zu eins.</h3><p>Ein Angebot an den Kunden ist selten so geschnitten, wie der Nachunternehmer beauftragt wird. Das Büro baut die Beauftragung je Gewerk neu auf, mit exakten Mengen und passenden Positionstexten. Früher Stunden an Fleißarbeit. Jetzt prüfst du und gibst frei.</p></div>
+<div class="tf rv"><p class="eyebrow">Es sagt, was fehlt</p><h3>Die Position, die keiner ausgeschrieben hat.</h3><p>Schnittstellen zwischen den Gewerken erkennt das Büro selbst. Fehlt im LV eine Leistung, die auf der Baustelle trotzdem anfällt, steht sie als Hinweis drin. Bevor du unterschreibst, nicht danach.</p></div>
+<div class="tf rv d1"><p class="eyebrow">Gedächtnis</p><h3>Montagmorgen, und du weißt, wo du stehst.</h3><p>Anke hat mitgeschrieben: was offen ist, wer seit wann was schuldet, welche Frist diese Woche läuft. Dein Postfach ist in zehn Minuten durch statt in einer Stunde. Von der Baustelle sprichst du einfach rein.</p></div>
+</div>
+<div class="grid2" style="margin-top:18px">
+<div class="wz rv"><b>Nichts ohne Quelle</b><span>Jede Menge hat einen Planbezug, jeder Preis eine Herkunft. Was geschätzt ist, steht als geschätzt drin.</span></div>
+<div class="wz rv d1"><b>Fachsprache, keine Prosa</b><span>Texte, die ein Nachunternehmer versteht und ein Bauherr prüfen kann.</span></div>
+<div class="wz rv d2"><b>Dein Layout, deine Preise</b><span>Logo, Briefkopf, Preisgedächtnis, Nachunternehmer-Liste: gehört dir und bleibt bei dir.</span></div>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="w">
+<div class="schwarm rv">
+<div>
+<p class="eyebrow">Schwarmwissen <span class="marke">im Aufbau</span></p>
+<h2>Je mehr Betriebe mitmachen, <em>desto besser wird jedes Update.</em></h2>
+<p>Das Wissen, das auf dem Bau wirklich zählt, steht in keinem Lehrbuch. Die Falle beim Aufmaß. Die Position, die im LV immer fehlt. Die Schnittstelle, um die sich am Ende keiner kümmert. Genau das sammelt das Team: Branchenwissen aus dem Ladenbau und Innenausbau, von Leuten, die jeden Tag damit arbeiten.</p>
+<p>Jedes Mal, wenn du das Team korrigierst, lernt es dazu. Bei dir bleibt das sowieso. Wenn du mitmachst, geht die Regel dahinter anonym in den gemeinsamen Topf, und mit dem nächsten Update haben alle was davon. Du auch von den anderen.</p>
+<p>Und nichts ist versteckt: Jede Regel, nach der das Team arbeitet, steht als lesbarer Text bei dir im Ordner. Du kannst alles nachlesen und für deinen Betrieb anpassen.</p>
+<label class="haken"><input type="checkbox" id="sw"><span class="box" aria-hidden="true">✓</span><span><b>Ich mache beim Schwarmwissen mit</b><small id="swt">Aus. Deine Korrekturen bleiben nur bei dir. Die Updates der anderen bekommst du trotzdem.</small></span></label>
+<p class="hk">So sieht der Haken in der Einrichtung aus. Du setzt ihn selbst und kannst ihn jederzeit wieder rausnehmen.</p>
+</div>
+<ul>
+<li><b>Freiwillig</b>Ein Haken, den du selbst setzt. Standard ist: aus.</li>
+<li><b>Immer anonym</b>Geteilt wird die Regel, nie, von wem sie kommt. Jeder Beitrag wird vor der Aufnahme geprüft und bereinigt.</li>
+<li><b>Nur Handwerk</b>Regeln, Fallen und Prüfschritte aus der Branche.</li>
+<li class="nie"><b>Nie geteilt</b>Preise, Kunden, Projekte, Namen, Dateien.</li>
+</ul>
+</div>
+</div></section>
+
+<section style="background:var(--bg2)"><div class="w">
+<p class="eyebrow rv">So startest du</p>
+<h2 class="rv">Vom Download <em>zum ersten Auftrag.</em></h2>
+<p class="sub rv">Kein IT-Projekt. Wenn du einen Ordner anlegen kannst, kannst du das einrichten.</p>
+<div class="phasen">
+<div class="ph rv"><small>01</small><b>Laden</b><ul><li>Testversion herunterladen</li><li>Setup starten</li></ul><span>ein paar Minuten</span></div>
+<div class="ph rv d1"><small>02</small><b>Speicherort wählen</b><ul><li>Lokal, Firmenserver oder Cloud</li><li>OneDrive, Dropbox, Google Drive, jedes Laufwerk</li><li>Die Ordner legt das Setup selbst an</li></ul><span>ein Klick</span></div>
+<div class="ph rv d2"><small>03</small><b>Einrichten</b><ul><li>Claude fragt dich per Auswahl durch</li><li>Firma, Logo, Mailprogramm, Module</li><li>Höchstens zehn Fragen</li></ul><span>du klickst, das Team baut</span></div>
+<div class="ph rv d3"><small>04</small><b>Loslegen</b><ul><li>Probelauf mit einem echten Plan</li><li>Erster Auftrag an Hasso</li></ul><span>ab jetzt arbeitet das Team</span></div>
+</div>
+</div></section>
+
+<section id="preise"><div class="w">
+<p class="eyebrow rv">Module und Preise</p>
+<h2 class="rv">Nimm, was du brauchst. <em>Erst testen, dann zahlen.</em></h2>
+<p class="sub rv" style="margin-bottom:22px">Die Basis läuft immer mit. Die Fachleute holst du dazu, wenn du sie brauchst.</p>
+<div class="module rv">
+<span><b>Basis</b>Anke, Morning Briefing, Mailentwurf, Voicenotes, Ordner</span>
+<span><b>+</b>Kalkulation mit GAEB</span><span><b>+</b>Werkplanung</span><span><b>+</b>Projektsteuerung</span><span><b>+</b>Belege (Beta)</span><span><b>+</b>Taifun</span>
+</div>
+<div class="preise">
+<div class="pr rv hl"><small>Testen</small><h3>4 Wochen alles</h3><div class="eur">0 €</div><div class="je">volles Team, alle Module</div><ul><li>Kein Abo, keine Kündigung nötig</li><li>Was du in der Zeit baust, gehört dir</li><li>Danach entscheidest du</li></ul><a class="btn d" href="#kontakt">Testzugang anfordern</a></div>
+<div class="pr rv d1"><small>Kaufen</small><h3>Einmalig</h3><div class="eur">ab 490 €</div><div class="je">je Firma, Basis</div><ul><li>12 Monate Updates inklusive</li><li>Module einzeln dazu</li><li>Später: Upgrade auf die nächste Hauptversion gegen Gebühr</li></ul><a class="btn g" href="#kontakt">Anfragen</a></div>
+<div class="pr rv d2"><small>Abo</small><h3>Immer aktuell</h3><div class="eur">ab 39 €</div><div class="je">je Nutzer und Monat</div><ul><li>Alle Module</li><li>Alle Updates, sobald sie da sind</li><li>Monatlich kündbar</li></ul><a class="btn g" href="#kontakt">Anfragen</a></div>
+<div class="pr rv d3"><small>Firma</small><h3>Für mehrere Kollegen</h3><div class="eur">Anfrage</div><div class="je">Server-Variante, Staffel nach Plätzen</div><ul><li>Ein Kern für alle, jeder mit eigenem Gedächtnis</li><li>Einrichtung durch mich persönlich, remote oder vor Ort</li><li>Vorlagen und Preise auf euren Betrieb angepasst</li></ul><a class="btn g" href="#kontakt">Anfragen</a></div>
+</div>
+<div class="spar rv">
+<div><p class="eyebrow">Token-optimiert</p><h3>Sparsam gebaut. Dein Claude-Abo hält länger.</h3><p>Claude rechnet in Token ab, das ist die Rechenzeit, die du bei Anthropic bezahlst. Ein Team, das bei jedem Auftrag sein ganzes Wissen durchliest, frisst dein Kontingent auf. Deshalb ist Team Kriwet AI auf Sparsamkeit gebaut, und wir drehen mit jedem Release weiter daran.</p></div>
+<ul>
+<li><b>Nur laden, was gebraucht wird</b>Jeder Kollege holt sich nur das Wissen für den aktuellen Auftrag.</li>
+<li><b>Kurzes Gedächtnis statt Endlos-Chat</b>Der Projektstand passt auf eine Seite. Der nächste Chat macht da weiter, ohne alles neu zu lesen.</li>
+<li><b>Token-Uhr</b>Am Ende steht, was die Arbeit an Rechenzeit gekostet hat. Du siehst, wo es hingeht.</li>
+</ul>
+</div>
+<p class="fuss rv">Alle Preise netto zzgl. USt., vorläufig für die Pilotphase. Dazu kommt dein eigenes Claude-Abo, das du direkt bei Anthropic zahlst (bezahlter Plan nötig). Daran verdienen wir nichts.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="w">
+<p class="eyebrow rv">Das Ehrliche dazu</p>
+<h2 class="rv">Was du <em>vorher wissen solltest.</em></h2>
+<div class="regeln" style="margin-top:34px">
+<div class="rg rv"><i>1</i><div><b>Du prüfst, du gibst frei</b><span>Das Team kann sich irren, wie jeder Mitarbeiter. Die Verantwortung für Mengen und Preise gibst du nicht ab. Deshalb wird nichts ohne dich verschickt oder gelöscht.</span></div></div>
+<div class="rg rv d1"><i>2</i><div><b>Du brauchst Claude</b><span>Team Kriwet AI läuft in der Claude-App von Anthropic auf deinem Rechner. Ohne bezahlten Claude-Plan geht es nicht.</span></div></div>
+<div class="rg rv"><i>3</i><div><b>Deine Daten gehen nicht an uns</b><span>Pläne, Preise und Projekte liegen in deinen Ordnern. Verarbeitet wird über dein eigenes Claude-Konto. Wir sehen davon nichts.</span></div></div>
+<div class="rg rv d1"><i>4</i><div><b>Windows zuerst</b><span>Entwickelt und getestet auf Windows. Mac folgt. Das Taifun-Modul bringt nur was, wenn du mit Taifun arbeitest.</span></div></div>
+</div>
+</div></section>
+
+<section id="kunden" style="background:var(--bg2)"><div class="w">
+<p class="eyebrow rv">Für Kunden</p>
+<h2 class="rv">Schon dabei? <em>Hier geht's weiter.</em></h2>
+<p class="sub rv">Das Team bleibt nicht stehen. Was ich auf meinen Baustellen dazulerne, landet im nächsten Release bei dir.</p>
+<div class="kunden">
+<div class="neu rv"><h3>Was ist neu</h3><div class="an">Aktueller Stand: Release R2.8 · November 2026</div>
+<ul>
+<li>Vor jedem Angebot fragt das Team die offenen Punkte per Klick-Auswahl ab, höchstens zehn Fragen</li>
+<li>Angebots-PDF im sauberen Firmenlayout, direkt aus der Kalkulation</li>
+<li>Einfacherer Einstieg: ein Ordner freigeben, der Rest läuft in der Einrichtung</li>
+<li>Handbuch in zwei Fassungen: kurz zum Mitnehmen, ausführlich zum Nachlesen</li>
+</ul></div>
+<div class="neu rv d1"><h3>So holst du ein Update</h3><div class="an">Deine Daten bleiben, getauscht wird nur der Kern</div>
+<ol>
+<li>Neues Release im Kundenbereich laden</li>
+<li>Startprompt in einen neuen Chat einfügen</li>
+<li>Das Team tauscht den Kern, sichert den alten Stand und sagt dir, was neu ist</li>
+</ol>
+<div class="cta" style="margin-top:20px"><a class="btn g" href="#kontakt">Zugang zum Kundenbereich anfragen</a></div>
+</div>
+</div>
+</div></section>
+
+<section><div class="w">
+<p class="eyebrow rv">Häufige Fragen</p>
+<h2 class="rv">Kurz <em>und ehrlich.</em></h2>
+<div class="faq rv">
+<details><summary>Muss ich mich mit KI auskennen?</summary><p>Nein. Du redest mit dem Team wie mit Kollegen, in ganzen Sätzen oder per Diktat. Ich bin selbst kein Programmierer.</p></details>
+<details><summary>Was kostet Claude zusätzlich?</summary><p>Das Claude-Abo zahlst du direkt bei Anthropic. Welcher Plan passt, hängt davon ab, wie viel du das Team arbeiten lässt. Die aktuellen Preise stehen auf claude.com.</p></details>
+<details><summary>Kann sich das Team verrechnen?</summary><p>Ja. Deshalb hat jede Menge einen Planbezug und jede Annahme ein Kennzeichen, damit du schnell prüfen kannst. Kritische Zahlen werden gegen das Original gegengeprüft. Freigeben musst trotzdem du.</p></details>
+<details><summary>Wo liegen meine Daten?</summary><p>Da, wo du es beim Einrichten festlegst: auf deinem Rechner, deinem Server oder in deiner Cloud. An uns geht nichts. Für die Verarbeitung gelten die Bedingungen deines eigenen Claude-Kontos.</p></details>
+<details><summary>Was passiert nach den vier Wochen Test?</summary><p>Du entscheidest. Alles, was in der Zeit entstanden ist, also Angebote, Pläne und dein Projektgedächtnis, gehört dir und bleibt bei dir.</p></details>
+<details><summary>Wir sind mehrere im Büro. Geht das?</summary><p>Ja, dafür gibt es die Firmen-Variante: Der Kern liegt einmal auf eurem Server, jeder Kollege hat sein eigenes Gedächtnis und sein eigenes Postfach.</p></details>
+<details><summary>Was ist das Schwarmwissen, und muss ich mitmachen?</summary><p>Nein, musst du nicht. Es ist ein Haken in der Einrichtung, Standard ist aus. Wenn du mitmachst, fließen die Regeln hinter deinen Korrekturen anonym in die nächsten Updates ein. Preise, Kunden, Projekte und Dateien werden nie geteilt.</p></details>
+<details><summary>Ich arbeite nicht mit Taifun. Lohnt sich das trotzdem?</summary><p>Ja. Taifun ist ein Zusatzmodul. Kalkulation, Excel, GAEB, Werkplanung und Projektgedächtnis laufen ohne.</p></details>
+</div>
+</div></section>
+
+<section class="finale" id="kontakt"><div class="w">
+<h2 class="rv"><em id="tn2">Dein Team</em> wartet schon.</h2>
+<p class="sub rv">Fang mit der Kostprobe an. Wenn's klick macht, schreib mir, und du bekommst den Testzugang. In der Pilotphase richte ich die ersten Betriebe persönlich mit ein.</p>
+<div class="cta rv"><a class="btn" href="mailto:je@kriwet.gmbh?subject=Team%20Kriwet%20AI%20%E2%80%93%20Testzugang">Testzugang anfordern</a><a class="btn g" href="#probe">Erst die Kostprobe</a></div>
+<p class="sub rv" style="margin-top:22px;font-size:15px">Jörg Ebbing · je@kriwet.gmbh</p>
+</div></section>
+
+<footer><div class="w"><span>Team Kriwet AI · Kriwet Projektmanagement GmbH</span><span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a></span></div>
+<div class="w"><p>Team Kriwet AI ist ein unabhängiges Zusatzpaket für Claude. Claude ist ein Produkt von Anthropic. Es besteht keine geschäftliche Verbindung zu Anthropic. Taifun und GAEB sind Bezeichnungen ihrer jeweiligen Inhaber.</p></div></footer>
+
+<script>
+var Z=[
+["Plan rein, Kostenrahmen raus","Grundriss oder Fotos dranhängen. Zurück kommt ein Kostenrahmen je Gewerk.","Kostprobe Konrad · häng einen Grundriss oder Fotos an",
+"Du bist Konrad, Kalkulator für Ladenbau und Innenausbau. Ich hänge dir einen Grundriss oder Fotos von einem Objekt an.\n\n1. Sag mir zuerst in drei Sätzen, was du erkennst: Fläche, Räume, Maßstab. Ist kein Maßstab erkennbar, frag mich nach einem Maß.\n2. Stell mir höchstens drei Fragen, die den Preis wirklich bewegen (zum Beispiel Ausbaustandard, Bestand oder Rohbau, Region). Warte auf meine Antwort.\n3. Erstelle dann einen Kostenrahmen netto je Gewerk als Tabelle: Gewerk | Menge mit Einheit | woher die Menge kommt | Kennwert von–bis | Summe von–bis.\n4. Kennzeichne jede Zahl: [Plan] = aus dem Plan gemessen, [Annahme] = von dir angenommen, [Kennwert] = Erfahrungswert.\n5. Schreib am Ende, was im Plan fehlt und auf der Baustelle trotzdem anfällt: Schnittstellen zwischen den Gewerken, Baustelleneinrichtung, Schutzmaßnahmen, Entsorgung.\n\nRate nichts, ohne es zu kennzeichnen. Sag klar, wenn du etwas nicht lesen kannst."],
+["LV rein, Lücken raus","Leistungsverzeichnis dranhängen. Zurück kommen Risiken, Lücken und fertige Bieterfragen.","Kostprobe Hasso · häng ein LV an (PDF, Excel oder GAEB)",
+"Du bist Hasso, erfahrener Projektleiter im Innenausbau. Ich hänge dir ein Leistungsverzeichnis an, zu dem ich ein Angebot abgeben soll. Lies es komplett und liefere mir:\n\n1. Eine Übersicht der Gewerke mit Anzahl der Positionen.\n2. Die zehn Positionen mit dem größten Risiko für mich als Bieter: unklare Menge, fehlende Angabe, Pauschale ohne Grundlage, widersprüchlicher Text. Jeweils mit Positionsnummer und einem Satz Begründung.\n3. Was fehlt: Leistungen, die auf der Baustelle anfallen, aber in keiner Position stehen. Achte besonders auf Schnittstellen zwischen den Gewerken.\n4. Die Fragen, die ich dem Auftraggeber vor der Abgabe stellen muss, fertig formuliert als Bieterfragen.\n\nNenne zu jeder Aussage die Positionsnummer. Erfinde nichts. Wenn du eine Seite nicht lesen kannst, sag welche."],
+["Baustelle reinsprechen, Protokoll raus","Notizen diktieren, wie sie kommen. Zurück kommen Protokoll, Mail und deine To-dos.","Kostprobe Anke · danach einfach diktieren oder tippen",
+"Du bist Anke, Assistentin eines Bauleiters. Ich diktiere dir gleich meine Notizen von einer Baustellenbegehung, ungeordnet, so wie sie kommen. Mach daraus:\n\n1. Ein Begehungsprotokoll, sortiert nach Gewerk, mit den offenen Punkten als Tabelle: Was | Wer | Bis wann. Wo ich keinen Verantwortlichen oder keinen Termin genannt habe, schreib \"offen\" und rate nicht.\n2. Eine kurze Mail an den Bauherrn im Ton eines Bauleiters: direkt, ohne Floskeln, nur das, was ihn betrifft.\n3. Eine Liste, was ich selbst bis morgen erledigen muss.\n\nFrag nach, wenn eine Angabe mehrdeutig ist. Sag \"Leg los\", wenn du bereit bist."]
+];
+var wahl=document.getElementById('wahl'),zx=document.getElementById('zx'),zi=0,kok=document.getElementById('kok');
+function zeigZ(i){zi=i;[].forEach.call(wahl.children,function(k,j){k.setAttribute('aria-selected',j==i)});document.getElementById('zt').textContent=Z[i][0];document.getElementById('za').textContent=Z[i][2];zx.value=Z[i][3];kok.textContent=''}
+Z.forEach(function(z,i){var k=document.createElement('button');k.type='button';k.className='pw';k.setAttribute('role','tab');k.innerHTML='<i>'+(i+1)+'</i><div><b></b><span></span></div>';k.querySelector('b').textContent=z[0];k.querySelector('span').textContent=z[1];k.onclick=function(){zeigZ(i)};wahl.appendChild(k)});
+zeigZ(0);
+document.getElementById('kop').addEventListener('click',function(){
+ function fertig(ok){kok.textContent=ok?'Kopiert. Jetzt in Claude einfügen.':'Text ist markiert. Mit Strg+C kopieren.'}
+ function vonHand(){zx.focus();zx.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}fertig(ok)}
+ try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(zx.value).then(function(){fertig(true)},vonHand)}else vonHand()}catch(e){vonHand()}
+});
+var fn=document.getElementById('fn'),tn1=document.getElementById('tn1'),tn2=document.getElementById('tn2');
+fn.addEventListener('input',function(){var n=fn.value.trim();tn1.textContent=n?'Team '+n+'.':'Dein neues Team.';tn2.textContent=n?'Team '+n:'Dein Team'});
+var sw=document.getElementById('sw'),swt=document.getElementById('swt');
+sw.addEventListener('change',function(){swt.textContent=sw.checked?'An. Die Regel hinter deiner Korrektur geht anonym in den gemeinsamen Topf. Preise, Kunden und Projekte bleiben bei dir.':'Aus. Deine Korrekturen bleiben nur bei dir. Die Updates der anderen bekommst du trotzdem.'});
+var v2=document.getElementById('v2'),v2b=document.getElementById('v2b'),laut=false;
+function ton(){laut=!laut;v2.muted=!laut;v2.loop=!laut;v2.controls=laut;if(laut)v2.currentTime=0;try{var p=v2.play();if(p&&p.catch)p.catch(function(){})}catch(e){}v2b.textContent=laut?'Stumm weiter':'▶ Mit Ton'}
+v2b.addEventListener('click',ton);
+v2.addEventListener('click',function(){if(!laut)ton()});
+var us=document.getElementById('uhr').children;v2.addEventListener('timeupdate',function(){var t=v2.currentTime,k=t<11.8?0:t<19.7?1:t<26.6?2:3;for(var i=0;i<4;i++)us[i].className=i==k?'an':''});
+v2.addEventListener('ended',function(){if(laut)ton()});
+if('IntersectionObserver' in window&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)){new IntersectionObserver(function(es){es.forEach(function(e){if(laut)return;if(e.isIntersecting){var p=v2.play();if(p&&p.catch)p.catch(function(){})}else v2.pause()})},{threshold:.35}).observe(v2)}
+var BS=[
+["Kostenschätzung","Lohnt sich das? Kostenrahmen je Gewerk.","Konrad",["Pläne oder Fotos","drei Sätze zum Vorhaben"],["Kostenrahmen je Gewerk mit Kennwerten, als PDF"],"eine Kostenschätzung",0],
+["Mengen- und Massenauszug","Die Grundlage jeder Kalkulation.","Konrad",["Pläne im Maßstab"],["Massenliste je Gewerk als Excel, jede Menge mit Planbezug"],"einen Massenauszug",0],
+["Angebot und Kalkulation","Positionsgenau, mit Vortexten und Massen.","Konrad",["Pläne im Maßstab oder ein LV, auch als GAEB-Datei","die Anfrage vom Kunden"],["Angebot als PDF in deinem Firmenlayout","Kalkulation als Excel, Zuschläge zum Selberdrehen","auf Wunsch als GAEB-Datei","Hinweisblatt: was fehlt, was zusammenhängt"],"ein Angebot mit Kalkulation",0],
+["Preisanfragen an Nachunternehmer","Je Gewerk ein fertiges Anfragepaket.","Konrad",["deine NU-Liste"],["je Gewerk LV-Auszug, Pläne und Anschreiben","Preisspiegel-Vorlage für den Rücklauf"],"die NU-Anfragen",1],
+["Werkplanung","Details, Schnitte, Ansichten, Übersichtsplan.","Ernst",["Pläne im Maßstab"],["Plansatz mit Übersichtsplan, Wandansichten, Deckenspiegel, als PDF"],"die Werkplanung",1],
+["Bauzeitenplan","Balkenplan nach Gewerken.","Hasso",["Starttermin und Eröffnung"],["Balkenplan mit Abhängigkeiten der Gewerke, als PDF und Excel"],"einen Bauzeitenplan",1],
+["Beauftragung der Nachunternehmer","Je Gewerk, mit exakten Mengen und eigenen Positionstexten.","Konrad",[],["je Gewerk eine Beauftragung mit exakten Mengen und Massen","Positionstexte so, wie der Nachunternehmer sie braucht"],"die NU-Beauftragungen",1]
+];
+var an=BS.map(function(_,i){return i==2}),bst=document.getElementById('bst'),au=document.getElementById('au');
+function esc(x){return x.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function einzig(a){var o=[];a.forEach(function(x){if(o.indexOf(x)<0)o.push(x)});return o}
+function mal(){
+ var rein=[],raus=[],wer=["Hasso"],was=[],brauchtA=false;
+ BS.forEach(function(b,i){if(an[i]){rein=rein.concat(b[3]);raus=raus.concat(b[4]);wer.push(b[2]);was.push(b[5]);if(b[6])brauchtA=true}});
+ if(brauchtA&&!an[2])rein.push('das fertige Angebot');
+ if(rein.indexOf('Pläne im Maßstab oder ein LV, auch als GAEB-Datei')>=0)rein=rein.filter(function(x){return x!='Pläne im Maßstab'});
+ wer.push("Anke");
+ if(!was.length){au.innerHTML='<p class="leer">Tipp links an, was du brauchst. Dann siehst du hier, was du reingibst und was zurückkommt.</p>';return}
+ var satz=was.length==1?was[0]:was.slice(0,-1).join(", ")+" und "+was[was.length-1];
+ au.innerHTML='<h4>Du gibst rein</h4><ul>'+einzig(rein).map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul><h4>Du bekommst zurück</h4><ul>'+raus.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul><h4>Daran arbeiten</h4><div class="wer">'+einzig(wer).map(function(x){return '<span>'+x+'</span>'}).join('')+'</div><div class="satz"><small>Du sagst</small>„Hasso, ich brauche '+esc(satz)+'.“</div>';
+}
+BS.forEach(function(b,i){var k=document.createElement('button');k.type='button';k.className='bs';k.setAttribute('aria-pressed',an[i]);k.innerHTML='<i>✓</i><div><b>'+b[0]+'</b><span>'+b[1]+'</span></div><em>'+b[2]+'</em>';k.onclick=function(){an[i]=!an[i];k.setAttribute('aria-pressed',an[i]);mal()};bst.appendChild(k)});
+[].forEach.call(document.querySelectorAll('.stand button'),function(b){b.addEventListener('click',function(){var l=b.getAttribute('data-v').split(',').map(Number);an=an.map(function(_,i){return l.indexOf(i)>=0});[].forEach.call(bst.children,function(k,i){k.setAttribute('aria-pressed',an[i])});mal()})});
+mal();
+var rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('da');io.unobserve(e.target)}})},{threshold:.08});rv.forEach(function(e){io.observe(e)})}else rv.forEach(function(e){e.classList.add('da')});
+</script>
+</body></html>
