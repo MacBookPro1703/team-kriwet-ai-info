@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Team Kriwet AI – Einrichten</title>
+<meta name="description" content="Team Kriwet AI auf deinem Rechner einrichten: Paket laden, Ordner verbinden, Startprompt einfügen. Schritt für Schritt.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<meta name="theme-color" content="#0F0E0D">
+<style>
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:500;font-display:swap;src:url(fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(fonts/inter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:800;font-display:swap;src:url(fonts/inter-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:900;font-display:swap;src:url(fonts/inter-latin-900-normal.woff2) format("woff2")}
+:root{--bg:#0F0E0D;--bg2:#171513;--card:#1D1A17;--line:rgba(255,255,255,.09);--tx:#F4EFE8;--mut:#A99F94;--or:#F08A18;--or2:#FFB254;--cream:#F5F0E8;--ink:#201E1C}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.w{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+.entwurf{background:#B0620A;color:#fff;font-size:13px;font-weight:600;text-align:center;padding:7px 14px;line-height:1.4}
+nav{position:sticky;top:0;z-index:30;background:rgba(15,14,13,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+nav .w{display:flex;align-items:center;gap:14px;height:64px}
+nav img{width:34px;height:34px;border-radius:6px}
+nav .brand{font-weight:800;letter-spacing:.04em;font-size:16px;line-height:1.1}
+nav .brand small{display:block;font-weight:500;letter-spacing:.02em;color:var(--mut);font-size:12px}
+nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
+nav .links a{text-decoration:none;color:var(--mut);font-weight:600;font-size:14px}
+nav .links a:hover{color:var(--tx)}nav .links a.btn,nav .links a.btn:hover{color:#1a1006}
+@media(max-width:780px){nav .links a.opt{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;background:var(--or);color:#1a1006;font-weight:800;text-decoration:none;border:0;font-size:15px;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 28px rgba(240,138,24,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(240,138,24,.5)}
+.btn.g{background:rgba(255,255,255,.06);color:var(--tx);box-shadow:none;border:1px solid var(--line)}
+.btn.g:hover{background:rgba(255,255,255,.12)}
+.btn.s{padding:9px 16px;font-size:13px}
+.btn.d{background:var(--ink);color:#F4EFE8;box-shadow:none}
+.btn[aria-disabled=true]{background:#3a342e;color:#A99F94;box-shadow:none;cursor:not-allowed;transform:none}
+.hero{position:relative;padding:64px 0 30px;overflow:hidden}
+.hero:before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-420px;background:radial-gradient(closest-side,rgba(240,138,24,.32),rgba(240,138,24,0));pointer-events:none}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid rgba(240,138,24,.45);color:var(--or2);font-weight:700;font-size:13px;letter-spacing:.04em;background:rgba(240,138,24,.08)}
+h1{font-size:clamp(38px,6.6vw,80px);line-height:1;letter-spacing:-.035em;margin:22px 0;font-weight:900;max-width:14ch}
+h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,var(--or),var(--or2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(18px,2.1vw,21px);line-height:1.5;color:#D8CFC4;max-width:48ch;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:70px 0}
+.eyebrow{color:var(--or2);font-weight:800;letter-spacing:.14em;font-size:13px;text-transform:uppercase;margin:0 0 14px}
+h2{font-size:clamp(28px,4.2vw,50px);line-height:1.05;letter-spacing:-.03em;margin:0 0 16px;font-weight:900;max-width:20ch}
+.sub{color:var(--mut);font-size:18px;line-height:1.55;max-width:58ch;margin:0 0 34px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.grid3{grid-template-columns:1fr}}
+.wz{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.wz b{display:flex;align-items:center;gap:10px;font-size:18px;margin-bottom:6px}
+.wz b:before{content:"";width:10px;height:10px;border-radius:3px;background:var(--or);flex:0 0 auto}
+.wz span{color:var(--mut);line-height:1.5;font-size:15px}
+/* Download */
+.dl{background:var(--cream);color:var(--ink);border-radius:26px;padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+@media(max-width:900px){.dl{grid-template-columns:1fr}}
+.dl .eyebrow{color:#B0620A}.dl h2 em{background:none;color:#F08A18}
+.dl p{font-size:17px;line-height:1.6;margin:0 0 18px;max-width:52ch}
+.dl .stand{color:#7A7068;font-size:14px;margin:14px 0 0}
+.dl ul{list-style:none;margin:0;padding:0}
+.dl li{background:#fff;border-radius:14px;padding:13px 16px 13px 42px;margin-bottom:10px;position:relative;font-size:15.5px;line-height:1.45}
+.dl li b{display:block}
+.dl li:before{content:"";position:absolute;left:16px;top:19px;width:10px;height:10px;border-radius:3px;background:#F08A18}
+.name{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 22px}
+.name label{color:var(--mut);font-weight:700;font-size:15px}
+.name input{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;color:var(--tx);font-family:inherit;font-size:16px;padding:11px 18px;width:220px}
+.name input:focus{outline:2px solid var(--or);outline-offset:1px}
+/* Assistent */
+.ass{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:start}
+@media(max-width:960px){.ass{grid-template-columns:1fr}}
+.liste{display:flex;flex-direction:column;gap:8px}
+@media(max-width:960px){.liste{flex-direction:row;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}.liste::-webkit-scrollbar{display:none}.liste .sw{flex:0 0 auto;width:auto;padding:8px}.liste .sw span{display:none}}
+.sw{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:var(--tx);font-family:inherit;cursor:pointer}
+.sw:hover{border-color:rgba(240,138,24,.5)}
+.sw i{flex:0 0 auto;font-style:normal;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:var(--or2)}
+.sw span{font-weight:700;font-size:15px;line-height:1.25}
+.sw[aria-current=step]{background:rgba(240,138,24,.12);border-color:var(--or)}
+.sw[aria-current=step] i{background:var(--or);color:#1a1006}
+.sw.ok i{background:#2F6B3A;color:#fff}
+.karte{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.balken{height:6px;background:rgba(255,255,255,.08)}.balken div{height:100%;background:linear-gradient(90deg,var(--or),var(--or2));transition:width .35s}
+.kopf{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 26px 0;color:var(--mut);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.karte h3{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:8px 26px 18px}
+.bild{margin:0 26px;border-radius:16px;background:#0A0908;border:1px solid var(--line);padding:18px;position:relative;min-height:250px;display:flex;align-items:center;justify-content:center}
+.bild img{max-width:100%;border-radius:10px;display:block}
+.bild .schema{position:absolute;right:12px;bottom:8px;color:#6E655C;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.tun{padding:20px 26px 6px}
+.tun ol{margin:0;padding-left:22px;line-height:1.6;font-size:17px;color:#E9E1D6}
+.tun li{padding:3px 0 3px 4px}
+.tun code,.dl code,.faq code{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:.92em;background:rgba(240,138,24,.14);border-radius:6px;padding:2px 7px;color:var(--or2);white-space:nowrap}
+.dl code,.zettel code{background:rgba(240,138,24,.16);color:#8A4A05}
+.acht{margin:14px 26px 0;border-left:4px solid var(--or);background:rgba(240,138,24,.08);border-radius:0 12px 12px 0;padding:12px 16px;color:#E9E1D6;font-size:15.5px;line-height:1.5}
+.acht b{color:var(--or2)}
+.fuss{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;padding:22px 26px 26px}
+.fuss label{display:flex;gap:10px;align-items:center;color:var(--mut);font-weight:600;font-size:15px;cursor:pointer}
+.fuss input{width:20px;height:20px;accent-color:#F08A18}
+.fuss .kn{display:flex;gap:10px}
+/* Schemabilder */
+.win{width:100%;max-width:560px;background:#F5F0E8;color:#201E1C;border-radius:12px;overflow:hidden;font-size:13.5px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.win .tb{display:flex;align-items:center;gap:6px;background:#E3DCD0;padding:8px 12px;font-weight:700;font-size:12px;color:#5d554c}
+.win .tb i{width:9px;height:9px;border-radius:50%;background:#B9AFA2;display:inline-block}
+.win .tb span{margin-left:8px}
+.win .in{padding:16px;position:relative;min-height:150px}
+.dat{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px}
+.dat.m{background:#FFE2BD;outline:2px solid #F08A18}
+.ico{flex:0 0 auto;width:26px;height:20px;border-radius:3px;background:#F2B441;position:relative}
+.ico:before{content:"";position:absolute;left:0;top:-4px;width:11px;height:5px;border-radius:2px 2px 0 0;background:#F2B441}
+.ico.z{background:#8C8377;height:26px;width:20px}.ico.z:before{display:none}
+.ico.t{background:#fff;border:1px solid #B9AFA2;height:26px;width:20px}.ico.t:before{display:none}
+.menu{position:absolute;right:26px;top:44px;background:#fff;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:6px;min-width:190px;font-size:13px}
+.menu div{padding:7px 10px;border-radius:6px;color:#5d554c}
+.menu div.m{background:#F08A18;color:#1a1006;font-weight:800}
+.chat{display:flex;flex-direction:column;gap:10px}
+.bub{align-self:flex-start;background:#fff;border-radius:12px 12px 12px 3px;padding:10px 13px;max-width:88%;line-height:1.45}
+.bub.ich{align-self:flex-end;background:#201E1C;color:#F4EFE8;border-radius:12px 12px 3px 12px}
+.eing{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #D5CCBF;border-radius:999px;padding:7px 12px;color:#8C8377;margin-top:6px}
+.plus{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:#E3DCD0;display:flex;align-items:center;justify-content:center;font-weight:900;color:#201E1C}
+.plus.m{background:#F08A18;outline:3px solid rgba(240,138,24,.35)}
+.chip{display:inline-flex;align-items:center;gap:6px;background:#E3DCD0;border-radius:8px;padding:4px 9px;font-weight:700;font-size:12px;color:#201E1C}
+.chip.m{background:#FFE2BD;outline:2px solid #F08A18}
+.wahlk{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.wahlk span{border:1px solid #D5CCBF;background:#fff;border-radius:9px;padding:7px 11px;font-weight:600}
+.wahlk span.m{border-color:#F08A18;background:#FFE2BD}
+.dlg{background:#fff;border-radius:12px;box-shadow:0 10px 34px rgba(0,0,0,.3);padding:16px;max-width:380px;margin:6px auto}
+.dlg b{display:block;font-size:15px;margin-bottom:8px}
+.dlg .pf{font-family:ui-monospace,Consolas,monospace;font-size:12px;background:#F5F0E8;border-radius:7px;padding:7px 9px;margin-bottom:6px;word-break:break-all}
+.dlg .kn{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+.dlg .kn span{border-radius:8px;padding:8px 14px;font-weight:800;font-size:13px;background:#E3DCD0}
+.dlg .kn span.m{background:#F08A18;color:#1a1006;outline:3px solid rgba(240,138,24,.35)}
+.pfeil{color:#F08A18;font-weight:900;font-size:22px;text-align:center;margin:6px 0}
+.dbtn{display:inline-block;background:#F08A18;color:#1a1006;font-weight:800;border-radius:999px;padding:9px 16px;outline:3px solid rgba(240,138,24,.35)}
+.leiste{margin-top:14px;display:flex;align-items:center;gap:8px;background:#E3DCD0;border-radius:8px;padding:8px 10px;font-weight:700;font-size:12.5px}
+/* 14 Schritte */
+.vz{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;counter-reset:v -1;list-style:none;margin:0;padding:0}
+@media(max-width:760px){.vz{grid-template-columns:1fr}}
+.vz li{counter-increment:v;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;position:relative;line-height:1.4;color:var(--mut);font-size:14.5px}
+.vz li b{display:block;color:var(--tx);font-size:16px}
+.vz li:before{content:counter(v);position:absolute;left:14px;top:14px;width:32px;height:32px;border-radius:10px;background:rgba(240,138,24,.16);color:var(--or2);font-weight:900;display:flex;align-items:center;justify-content:center}
+.vz li.opt b:after{content:"optional";margin-left:8px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.faq{max-width:860px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-weight:700;font-size:19px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:6px;top:14px;font-size:28px;color:var(--or2);font-weight:500}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0 0 22px;color:#CFC6BB;line-height:1.6;max-width:68ch}
+.finale{text-align:center}
+.finale h2{margin:0 auto 16px;max-width:none}
+.finale .sub{margin:0 auto 28px}.finale .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:30px 0 calc(36px + env(safe-area-inset-bottom));color:var(--mut);font-size:14px}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="entwurf" id="eb">Entwurf zur Abstimmung · Download ist noch nicht angeschlossen · Bilder sind Schemabilder</div>
+
+<nav><div class="w">
+<img src="k.png" alt="Kriwet">
+<div class="brand">KRIWET<small>Team Kriwet AI · Einrichten</small></div>
+<div class="links"><a class="opt" href="#vorher">Vorher</a><a class="opt" href="#paket">Paket</a><a class="opt" href="#assistent">Assistent</a><a class="opt" href="#hilfe">Wenn's hakt</a><a class="opt" href="../">Zum Team</a>
+<a class="btn s" href="#assistent">Los geht's</a></div>
+</div></nav>
+
+<header class="hero"><div class="w">
+<span class="pill">FÜR KOLLEGEN · DOWNLOAD-VARIANTE</span>
+<h1>Eine halbe Stunde. <em>Dann steht dein Team.</em></h1>
+<p class="lead">Paket laden, einen Ordner verbinden, eine Datei in den Chat ziehen. Den Rest fragt Claude dich Schritt für Schritt ab. Du brauchst keinen Server und keine IT.</p>
+<div class="cta"><a class="btn" href="#paket">Paket laden</a><a class="btn g" href="#assistent">Erst mal ansehen, wie's läuft</a></div>
+</div></header>
+
+<section id="vorher" style="padding-top:40px"><div class="w">
+<p class="eyebrow">Vorher</p>
+<h2>Drei Dinge, <em>dann geht's los.</em></h2>
+<div class="grid3" style="margin-top:28px">
+<div class="wz"><b>Claude auf dem Rechner</b><span>Die Claude-Desktop-App für Windows, angemeldet mit deiner Kriwet-Adresse. Am Handy geht die Einrichtung nicht.</span></div>
+<div class="wz"><b>Outlook (classic)</b><span>Für Mailentwürfe, Kalender und das Morning Briefing. Wichtig: das klassische Outlook, nicht das neue. Kannst du auch später nachholen.</span></div>
+<div class="wz"><b>Eine halbe Stunde Ruhe</b><span>Die Einrichtung läuft in einem Stück am besten. Musst du unterbrechen, lass den Chat offen und mach später dort weiter.</span></div>
+</div>
+</div></section>
+
+<section id="paket" style="padding-top:20px"><div class="w">
+<div class="dl">
+<div>
+<p class="eyebrow">Das Paket</p>
+<h2>Alles in <em>einer Datei.</em></h2>
+<p>Im Paket steckt der komplette Werkzeugkoffer: die Arbeitsanweisungen für alle sechs Kollegen, das Fachwissen, die Vorlagen und beide Handbücher. Du entpackst es einmal auf deinen Desktop.</p>
+<a class="btn d" id="dlb" href="#paket" aria-disabled="true">Download wird gerade angeschlossen</a>
+<p class="stand" id="dls">Aktueller Stand: Release R2.8 vom 09.11.2026. Der Download braucht deine Kriwet-Anmeldung.</p>
+</div>
+<ul>
+<li><b>Nur für Kriwet</b>Im Paket liegen Preisgedächtnis und Preisspiegel. Nicht weitergeben, nicht an Kunden oder Nachunternehmer.</li>
+<li><b>Nichts wird installiert</b>Es ist ein Ordner mit Textdateien und Vorlagen. Claude liest daraus, mehr passiert nicht.</li>
+<li><b>Deine Sachen bleiben getrennt</b>Dein Profil, dein Projektgedächtnis und deine Entwürfe liegen in einem eigenen Ordner, den nur du hast.</li>
+</ul>
+</div>
+</div></section>
+
+<section id="assistent" style="background:var(--bg2)"><div class="w">
+<p class="eyebrow">Einrichtungsassistent</p>
+<h2>Klick dich durch. <em>Schritt für Schritt.</em></h2>
+<p class="sub" style="margin-bottom:20px">Lass die Seite neben Claude offen und hak ab, was erledigt ist. Die Seite merkt sich, wo du warst.</p>
+<div class="name"><label for="vn">Dein Vorname:</label><input id="vn" type="text" maxlength="20" placeholder="z. B. Max" autocomplete="given-name"></div>
+<div class="ass">
+<div class="liste" id="liste" role="tablist" aria-label="Schritte"></div>
+<div class="karte">
+<div class="balken"><div id="bk"></div></div>
+<div class="kopf"><span id="kz">Schritt 1 von 8</span><span id="kd"></span></div>
+<h3 id="kt"></h3>
+<div class="bild"><div id="kb" style="width:100%;display:flex;justify-content:center"></div><span class="schema" id="ks">Schemabild</span></div>
+<div class="tun"><ol id="ko"></ol></div>
+<div class="acht" id="ka"></div>
+<div class="fuss"><label><input type="checkbox" id="kc"> Erledigt</label><div class="kn"><button type="button" class="btn g" id="kzur">Zurück</button><button type="button" class="btn" id="kwei">Weiter</button></div></div>
+</div>
+</div>
+</div></section>
+
+<section><div class="w">
+<p class="eyebrow">Was Claude dich fragt</p>
+<h2>Die Einrichtung <em>im Überblick.</em></h2>
+<p class="sub">Claude führt dich durch 14 Schritte. Zu jedem sagt es dir, wofür es gut ist. Was du nicht brauchst, überspringst du.</p>
+<ol class="vz">
+<li><b>Ordner vorbereiten</b>Dein eigener Ordner auf dem Desktop, beide Ordner verbinden.</li>
+<li><b>Bevor du anfängst</b>Ein paar Sätze von Jörg zur Haltung und zu den Handbüchern.</li>
+<li><b>Wer bist du</b>Name, Kürzel, Rolle, Mobilnummer, Postfach.</li>
+<li><b>Deine Ordner</b>Claude prüft die Ordner und legt dein Notizbuch an.</li>
+<li><b>Deine Projekte</b>Welche Projekte du hast und wer die wichtigsten Kontakte sind.</li>
+<li><b>Mail und Outlook</b>Mails kommen nur als Entwurf, gesendet wird nie von allein.</li>
+<li><b>Kalender</b>Fristen und Merker, nach festen Regeln.</li>
+<li class="opt"><b>Voicenotes</b>Wenn du von der Baustelle reinsprichst.</li>
+<li class="opt"><b>Benachrichtigungs-Ordner</b>Capmo- und Asana-Mails auf Zuruf wegsortieren.</li>
+<li><b>Diktat</b>Damit „Typhoon“ als Taifun verstanden wird.</li>
+<li><b>Arbeitsweise</b>Live-Status, Übergabeprotokoll, Auswahlfragen. Empfehlung: alles an lassen.</li>
+<li><b>Profil speichern</b>Claude zeigt dir alles, was es angelegt hat.</li>
+<li><b>Automatik</b>Damit deine Ordner in jedem neuen Chat von allein kommen.</li>
+<li><b>Dein erstes Projekt</b>So arbeitest du ab jetzt, je Projekt.</li>
+<li><b>Probelauf</b>Ein echtes Morning Briefing zum Abschluss.</li>
+</ol>
+</div></section>
+
+<section id="hilfe" style="background:var(--bg2)"><div class="w">
+<p class="eyebrow">Wenn's hakt</p>
+<h2>Die üblichen <em>Stolperstellen.</em></h2>
+<div class="faq">
+<details><summary>Ich habe den Ordner ausgewählt, aber Claude sagt, es ist keiner verbunden.</summary><p>Dann fehlt der Klick auf „Erlauben“. Nach dem Auswählen kommt ein eigenes kleines Fenster mit dem Pfad. Erst wenn du dort auf „Erlauben“ (oder „Allow“) klickst, ist der Ordner wirklich verbunden. Kommt das Fenster nicht, sag es Claude, dann löst es die Abfrage selbst aus.</p></details>
+<details><summary>Wohin entpacke ich das Paket?</summary><p>Auf den Desktop. Der Ordner heißt danach <code>TEAM KRIWET AI</code>. Lass den Namen so und verschieb ihn später nicht, sonst findet Claude ihn nicht wieder.</p></details>
+<details><summary>Claude findet Outlook nicht oder der Mailtext bleibt leer.</summary><p>Bei der Freigabe immer „Outlook (classic)“ wählen. „Outlook“ allein ist das neue Outlook, damit funktioniert es nicht. Und die Freigabe „Zwischenablage schreiben“ mit erlauben, sonst kommt der Text nicht an.</p></details>
+<details><summary>Kann ich mittendrin aufhören?</summary><p>Ja. Lass den Chat offen und mach später genau dort weiter. In einem Stück läuft es aber am rundesten.</p></details>
+<details><summary>Wie bekomme ich ein Update?</summary><p>Neues Paket hier laden und entpacken, dann die Startprompt-Datei in einen neuen Chat einfügen. Claude erkennt, dass du schon ein Profil hast, und sagt dir in einer Nachricht, was neu ist. Deine eigenen Sachen bleiben unberührt.</p></details>
+<details><summary>Was ist der Unterschied zur Server-Variante?</summary><p>Inhaltlich keiner. Bei der Server-Variante liegt der Werkzeugkoffer im Firmenordner und ist für alle immer aktuell. Bei der Download-Variante liegt er bei dir auf dem Rechner, und du holst dir neue Stände selbst.</p></details>
+</div>
+</div></section>
+
+<section class="finale"><div class="w">
+<h2>Hängst du fest? <em>Sag Bescheid.</em></h2>
+<p class="sub">Fragen, Ideen und Fallen gehen direkt an Jörg. Jede Stolperstelle, die du meldest, ist beim nächsten Kollegen schon weg.</p>
+<div class="cta"><a class="btn" href="mailto:je@kriwet.gmbh?subject=Team%20Kriwet%20AI%20%E2%80%93%20Einrichtung">Jörg schreiben</a><a class="btn g" href="../">Zurück zum Team</a></div>
+<p class="sub" style="margin-top:20px;font-size:15px">Jörg Ebbing · je@kriwet.gmbh</p>
+</div></section>
+
+<footer><div class="w"><span>Team Kriwet AI · Einrichtung, Download-Variante</span><span>Kriwet Projektmanagement GmbH · intern</span></div></footer>
+
+<script>
+/* ===== Hier wird der Download angeschlossen (Sachverständiger) ===== */
+var DOWNLOAD_URL="";            /* geschützter Link, z. B. SharePoint mit Kriwet-Anmeldung. Leer = Knopf aus. */
+var RELEASE="R2.8";             /* Release-Name */
+var RELEASE_DATUM="09.11.2026";
+var PAKET="TEAM-KRIWET-AI_"+RELEASE+".zip";
+var STARTPROMPT="01_STARTPROMPT_Installation-Aktualisierung.txt";
+/* ================================================================== */
+var dlb=document.getElementById('dlb');
+if(DOWNLOAD_URL){dlb.href=DOWNLOAD_URL;dlb.removeAttribute('aria-disabled');dlb.target='_blank';dlb.rel='noopener';dlb.textContent='Paket laden ('+RELEASE+')'}
+else dlb.addEventListener('click',function(e){e.preventDefault()});
+document.getElementById('dls').textContent='Aktueller Stand: Release '+RELEASE+' vom '+RELEASE_DATUM+'. Der Download braucht deine Kriwet-Anmeldung.';
+
+function fen(titel,innen){return '<div class="win"><div class="tb"><i></i><i></i><i></i><span>'+titel+'</span></div><div class="in">'+innen+'</div></div>'}
+var VN='<Vorname>';
+function esc(x){return x.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function mein(){return 'TEAM KRIWET AI '+VN}
+var S=[
+{t:'Paket laden',k:'Laden',d:'1 Minute',
+ b:function(){return fen('Team Kriwet AI · Einrichten','<div style="text-align:center;padding:14px 0"><span class="dbtn">Paket laden ('+RELEASE+')</span></div><div class="leiste"><span class="ico z"></span>'+PAKET+' · fertig</div>')},
+ o:function(){return ['Oben auf dieser Seite auf <b>Paket laden</b> klicken.','Mit deiner Kriwet-Adresse anmelden, falls du gefragt wirst.','Warten, bis <code>'+PAKET+'</code> im Download-Ordner liegt.']},
+ a:'<b>Nur für dich.</b> Das Paket enthält Kriwet-Interna. Nicht weiterleiten.'},
+{t:'Auf den Desktop entpacken',k:'Entpacken',d:'1 Minute',
+ b:function(){return fen('Downloads','<div class="dat m"><span class="ico z"></span>'+PAKET+'</div><div class="menu"><div>Öffnen</div><div class="m">Alle extrahieren…</div><div>Kopieren</div><div>Umbenennen</div></div><div style="height:74px"></div><div class="leiste">Ziel: Desktop</div>')},
+ o:function(){return ['Rechtsklick auf <code>'+PAKET+'</code>.','<b>Alle extrahieren…</b> wählen, als Ziel den <b>Desktop</b>.','Auf dem Desktop liegt jetzt der Ordner <code>TEAM KRIWET AI</code>.']},
+ a:'<b>Namen so lassen.</b> Den Ordner nicht umbenennen und später nicht verschieben.'},
+{t:'Claude öffnen, neuer Chat',k:'Claude öffnen',d:'1 Minute',
+ b:function(){return fen('Claude','<div style="display:flex;gap:12px"><div style="flex:0 0 120px;display:flex;flex-direction:column;gap:6px"><span class="chip m">+ Neuer Chat</span><span class="chip">Projekte</span><span class="chip">Chats</span></div><div style="flex:1"><div style="color:#8C8377;text-align:center;padding:26px 0 18px;font-weight:700">Womit fangen wir an?</div><div class="eing"><span class="plus">+</span>Nachricht schreiben…</div></div></div>')},
+ o:function(){return ['Die Claude-App auf dem Rechner öffnen.','Prüfen, dass du mit deiner <b>Kriwet-Adresse</b> angemeldet bist.','Einen <b>neuen, leeren Chat</b> aufmachen.']},
+ a:'<b>Leerer Chat.</b> Nicht in einem alten Chat weitermachen, dort fehlt der frische Stand.'},
+{t:'Ordner mit dem Chat verbinden',k:'Ordner verbinden',d:'1 Minute',
+ b:function(){return fen('Claude','<div style="height:66px"></div><div class="menu" style="left:16px;right:auto;top:14px"><div>Datei hochladen</div><div class="m">Ordner hinzufügen</div><div>Screenshot</div></div><div class="eing"><span class="plus m">+</span>Nachricht schreiben…</div><div class="leiste" style="margin-top:12px"><span class="ico"></span>Desktop › TEAM KRIWET AI</div>')},
+ o:function(){return ['Links neben dem Eingabefeld auf das <b>+</b> klicken.','<b>Ordner hinzufügen</b> wählen.','Den Ordner <code>TEAM KRIWET AI</code> auf dem Desktop auswählen.']},
+ a:'<b>Noch nicht fertig.</b> Gleich kommt ein zweites Fenster. Das ist der nächste Schritt.'},
+{t:'Im Pop-up auf „Erlauben“ klicken',k:'Erlauben',d:'10 Sekunden',
+ b:function(){return '<div class="win" style="background:rgba(245,240,232,.5)"><div class="in"><div class="dlg"><b>Claude möchte auf diesen Ordner zugreifen</b><div class="pf">C:\\Users\\…\\Desktop\\TEAM KRIWET AI</div><div class="kn"><span>Ablehnen</span><span class="m">Erlauben</span></div></div></div></div>'},
+ o:function(){return ['Es erscheint ein kleines Fenster mit dem Pfad des Ordners.','Auf <b>Erlauben</b> klicken (je nach Sprache „Allow“).','Der Ordner steht jetzt oben im Chat.']},
+ a:'<b>Die häufigste Stolperstelle.</b> Das Auswählen allein reicht nicht. Ohne „Erlauben“ sieht Claude den Ordner nicht.'},
+{t:'Startprompt-Datei in den Chat',k:'Startprompt',d:'30 Sekunden',
+ b:function(){return fen('TEAM KRIWET AI','<div class="dat"><span class="ico t"></span>00_ZUERST-LESEN.md</div><div class="dat m"><span class="ico t"></span>'+STARTPROMPT+'</div><div class="menu" style="top:70px"><div>Öffnen</div><div class="m">Kopieren</div><div>Umbenennen</div></div><div style="height:46px"></div><div class="pfeil">↓ Strg + V</div><div class="eing"><span class="plus">+</span><span class="chip m">'+STARTPROMPT.slice(0,22)+'…</span></div>')},
+ o:function(){return ['Den Ordner <code>TEAM KRIWET AI</code> auf dem Desktop öffnen.','Rechtsklick auf <code>'+STARTPROMPT+'</code>, dann <b>Kopieren</b>.','Zurück in den Chat, <b>Strg + V</b>, dann <b>Enter</b>.']},
+ a:'<b>Die Datei hängt dann als Anhang im Chat.</b> Du musst nichts dazuschreiben, Claude legt von allein los.'},
+{t:'Deinen eigenen Ordner anlegen',k:'Dein Ordner',d:'2 Minuten',
+ b:function(){return fen('Claude','<div class="chat"><div class="bub"><b>Schritt 0 von 14 – Ordner vorbereiten.</b><br>Leg auf deinem Desktop einen leeren Ordner an: <b>'+esc(mein())+'</b></div><div style="display:flex;gap:18px;justify-content:center;padding:6px 0"><div style="text-align:center"><span class="ico" style="display:inline-block"></span><div style="font-size:11.5px;font-weight:700">TEAM KRIWET AI</div></div><div style="text-align:center"><span class="ico" style="display:inline-block;outline:2px solid #F08A18;outline-offset:3px"></span><div style="font-size:11.5px;font-weight:700">'+esc(mein())+'</div></div></div><div class="bub ich">Ok</div></div>')},
+ o:function(){return ['Claude bittet dich, auf dem Desktop einen leeren Ordner anzulegen: <code>'+esc(mein())+'</code>.','Den Ordner wie eben verbinden: <b>+</b>, <b>Ordner hinzufügen</b>, <b>Erlauben</b>.','Im Chat <b>Ok</b> schreiben.']},
+ a:'<b>Das ist deine persönliche Ablage.</b> Hier liegen dein Profil, dein Projektgedächtnis und deine Entwürfe. Der andere Ordner ist das gemeinsame Wissen.'},
+{t:'Einrichtung durchklicken',k:'Einrichtung',d:'ca. 25 Minuten',
+ b:function(){return fen('Claude','<div class="chat"><div class="bub"><b>Schritt 5 von 14 – Mail und Outlook.</b><br>Wie soll ich an deine Mails kommen?</div><div class="wahlk"><span class="m">Über Outlook (classic) am Bildschirm · Empfehlung</span><span>Über Microsoft 365</span><span>Später einrichten</span></div></div>')},
+ o:function(){return ['Claude fragt dich durch die 14 Schritte. Zu jedem sagt es, wofür er gut ist.','Bei Auswahlfragen klickst du einen Knopf an. Die Empfehlung steht oben.','Am Ende läuft ein Probelauf, am besten ein <b>Morning Briefing</b>.']},
+ a:'<b>Was du nicht brauchst, überspringst du.</b> Voicenotes und Benachrichtigungs-Ordner sind freiwillig, Outlook geht auch später.'}
+];
+var N=S.length,cur=0,ok=[],KEY='tka-onb-v1';
+try{var g=JSON.parse(localStorage.getItem(KEY)||'{}');if(g.ok)ok=g.ok;if(typeof g.cur=='number')cur=Math.min(N-1,Math.max(0,g.cur));if(g.vn){VN=g.vn;document.getElementById('vn').value=g.vn}}catch(e){}
+function merk(){try{localStorage.setItem(KEY,JSON.stringify({ok:ok,cur:cur,vn:VN=='<Vorname>'?'':VN}))}catch(e){}}
+var liste=document.getElementById('liste');
+S.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.className='sw';b.setAttribute('role','tab');b.innerHTML='<i>'+(i+1)+'</i><span></span>';b.querySelector('span').textContent=s.k;b.onclick=function(){geh(i)};liste.appendChild(b)});
+function bildSetzen(i){
+ var kb=document.getElementById('kb'),ks=document.getElementById('ks');
+ kb.innerHTML=S[i].b();ks.style.display='';
+ var im=new Image();im.alt='Bildschirmfoto: '+S[i].t;
+ im.onload=function(){if(cur!==i)return;kb.innerHTML='';kb.appendChild(im);ks.style.display='none'};
+ im.src='shots/schritt-'+(i+1)+'.png';
+}
+function mal(){
+ var s=S[cur];
+ [].forEach.call(liste.children,function(b,i){if(i==cur)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');b.classList.toggle('ok',!!ok[i]);b.querySelector('i').textContent=ok[i]?'✓':(i+1)});
+ document.getElementById('kz').textContent='Schritt '+(cur+1)+' von '+N;
+ document.getElementById('kd').textContent=s.d;
+ document.getElementById('kt').textContent=s.t;
+ document.getElementById('ko').innerHTML=s.o().map(function(x){return '<li>'+x+'</li>'}).join('');
+ document.getElementById('ka').innerHTML=s.a;
+ document.getElementById('kc').checked=!!ok[cur];
+ document.getElementById('bk').style.width=Math.round(ok.filter(Boolean).length/N*100)+'%';
+ document.getElementById('kzur').style.visibility=cur?'visible':'hidden';
+ document.getElementById('kwei').textContent=cur==N-1?'Fertig':'Weiter';
+ bildSetzen(cur);
+}
+function geh(i){cur=Math.max(0,Math.min(N-1,i));merk();mal()}
+document.getElementById('kzur').onclick=function(){geh(cur-1)};
+document.getElementById('kwei').onclick=function(){ok[cur]=true;if(cur<N-1){geh(cur+1)}else{merk();mal();document.getElementById('kt').textContent='Geschafft. Dein Team steht.'}};
+document.getElementById('kc').onchange=function(e){ok[cur]=e.target.checked;merk();mal()};
+document.getElementById('vn').addEventListener('input',function(e){var n=e.target.value.trim();VN=n||'<Vorname>';merk();mal()});
+mal();
+</script>
+</body></html>
