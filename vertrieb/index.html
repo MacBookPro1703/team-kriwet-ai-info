@@ -52,7 +52,7 @@ h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,var(--or),var(--o
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 .klein{color:var(--mut);font-size:14px;margin:16px 0 0}
 .film{position:relative;margin-top:54px;border-radius:24px;padding:6px;background:linear-gradient(135deg,rgba(240,138,24,.7),rgba(255,255,255,.08) 40%,rgba(240,138,24,.35));box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 120px rgba(240,138,24,.15)}
-.film img{display:block;width:100%;border-radius:19px}
+.film img{display:block;width:100%;height:auto;border-radius:19px}.film video{display:block;width:100%;aspect-ratio:16/9;border-radius:19px;background:#000}
 .film .tag{position:absolute;left:22px;top:-14px;background:var(--or);color:#1a1006;font-weight:800;font-size:12px;letter-spacing:.06em;padding:6px 12px;border-radius:999px}
 section{padding:90px 0}
 .eyebrow{color:var(--or2);font-weight:800;letter-spacing:.14em;font-size:13px;text-transform:uppercase;margin:0 0 14px}
@@ -267,8 +267,8 @@ footer p{margin:14px 0 0;max-width:90ch;font-size:13px}
 <p class="lead rv d2">Team Kriwet AI ist ein fertig eingerichtetes Planungsbüro für deinen Rechner. Sechs KI-Kollegen, die rechnen, zeichnen, sich alles merken und dir den Schreibkram abnehmen. Gebaut auf der Baustelle, nicht im Labor.</p>
 <div class="cta rv d3"><a class="btn" href="#probe">In 5 Minuten ausprobieren</a><a class="btn g" href="#team">Das Team kennenlernen</a></div>
 <p class="klein rv d3">Kein Download, keine Anmeldung bei uns. Du brauchst nur Claude und einen Plan von einem echten Projekt.</p>
-<div class="film rv"><span class="tag">DEIN NEUES TEAM</span>
-<img src="team/gruppe.jpg" alt="Sechs Kollegen des Teams vor einer Baustelle" width="1280" height="620">
+<div class="film rv"><span class="tag">FILM · 1:10</span>
+<video id="v" controls playsinline preload="metadata" poster="team/gruppe.jpg" src="../film-team-kriwet.mp4"></video>
 </div>
 </div></header>
 
@@ -509,8 +509,9 @@ fn.addEventListener('input',function(){var n=fn.value.trim();tn1.textContent=n?'
 var sw=document.getElementById('sw'),swt=document.getElementById('swt');
 sw.addEventListener('change',function(){swt.textContent=sw.checked?'An. Die Regel hinter deiner Korrektur geht anonym in den gemeinsamen Topf. Preise, Kunden und Projekte bleiben bei dir.':'Aus. Deine Korrekturen bleiben nur bei dir. Die Updates der anderen bekommst du trotzdem.'});
 var v2=document.getElementById('v2'),v2b=document.getElementById('v2b'),laut=false;
-function ton(){laut=!laut;v2.muted=!laut;v2.loop=!laut;v2.controls=laut;if(laut)v2.currentTime=0;try{var p=v2.play();if(p&&p.catch)p.catch(function(){})}catch(e){}v2b.textContent=laut?'Stumm weiter':'▶ Mit Ton'}
+function ton(){laut=!laut;v2.muted=!laut;v2.loop=!laut;v2.controls=laut;if(laut){v2.currentTime=0;var h=document.getElementById('v');if(h&&!h.paused)h.pause()}try{var p=v2.play();if(p&&p.catch)p.catch(function(){})}catch(e){}v2b.textContent=laut?'Stumm weiter':'▶ Mit Ton'}
 v2b.addEventListener('click',ton);
+document.getElementById('v').addEventListener('play',function(){if(laut)ton()});
 v2.addEventListener('click',function(){if(!laut)ton()});
 var us=document.getElementById('uhr').children;v2.addEventListener('timeupdate',function(){var t=v2.currentTime,k=t<11.8?0:t<19.7?1:t<26.6?2:3;for(var i=0;i<4;i++)us[i].className=i==k?'an':''});
 v2.addEventListener('ended',function(){if(laut)ton()});
