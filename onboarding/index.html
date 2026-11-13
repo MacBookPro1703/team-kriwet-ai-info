@@ -152,6 +152,14 @@ h2{font-size:clamp(28px,4.2vw,50px);line-height:1.05;letter-spacing:-.03em;margi
 .finale .sub{margin:0 auto 28px}.finale .cta{justify-content:center}
 footer{border-top:1px solid var(--line);padding:30px 0 calc(36px + env(safe-area-inset-bottom));color:var(--mut);font-size:14px}
 footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Umschalter Team / Für Kunden / Einrichten intern – auf allen drei Seiten gleich */
+.umsch{display:flex;gap:4px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:4px;margin-left:22px;flex:0 0 auto}
+.umsch a{padding:8px 15px;border-radius:999px;font-weight:800;font-size:13px;text-decoration:none;color:var(--tx);white-space:nowrap;line-height:1.2}
+.umsch a:hover{background:rgba(255,255,255,.1)}
+.umsch a[aria-current=page],.umsch a[aria-current=page]:hover{background:var(--or);color:#1a1006}
+@media(max-width:1080px){nav .links a.opt{display:none}}
+@media(max-width:720px){html{scroll-padding-top:130px}nav .w{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;row-gap:10px}.umsch{flex:1 0 100%;margin-left:0}.umsch a{flex:1 1 auto;text-align:center;padding:9px 6px;font-size:12.5px}}
 </style>
 </head>
 <body>
@@ -161,8 +169,8 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <nav><div class="w">
 <img src="k.png" alt="Kriwet">
 <div class="brand">KRIWET<small>Team Kriwet AI · Einrichten</small></div>
-<div class="links"><a class="opt" href="#vorher">Vorher</a><a class="opt" href="#paket">Paket</a><a class="opt" href="#assistent">Assistent</a><a class="opt" href="#hilfe">Wenn's hakt</a><a class="opt" href="../">Zum Team</a>
-<a class="btn s" href="#assistent">Los geht's</a></div>
+<div class="links"><a class="opt" href="#vorher">Vorher</a><a class="opt" href="#paket">Paket</a><a class="opt" href="#assistent">Assistent</a><a class="opt" href="#hilfe">Wenn's hakt</a></div>
+<div class="umsch" role="navigation" aria-label="Seiten"><a href="../">Team</a><a href="../vertrieb/">Für Kunden</a><a href="../onboarding/" aria-current="page">Einrichten intern</a></div>
 </div></nav>
 
 <header class="hero"><div class="w">

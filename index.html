@@ -32,7 +32,7 @@ nav .brand small{display:block;font-weight:500;letter-spacing:.02em;color:var(--
 nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
 nav .links a{text-decoration:none;color:var(--mut);font-weight:600;font-size:14px}
 nav .links a:hover{color:var(--tx)}nav .links a.btn,nav .links a.btn:hover{color:#1a1006}
-@media(max-width:720px){nav .links a.opt{display:none}nav .links{gap:8px}nav .links a.btn.s{padding:8px 12px;font-size:12px}}
+
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;background:var(--or);color:#1a1006;font-weight:800;text-decoration:none;border:0;font-size:15px;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 28px rgba(240,138,24,.35)}
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(240,138,24,.5)}
 .btn.g{background:rgba(255,255,255,.06);color:var(--tx);box-shadow:none;border:1px solid var(--line)}
@@ -202,6 +202,14 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @keyframes inR{from{opacity:0;transform:translateX(70px) scale(.97)}}@keyframes inL{from{opacity:0;transform:translateX(-70px) scale(.97)}}
 #lb .leiste{display:flex;gap:16px;align-items:center;margin-top:14px;color:#ddd}
 #lb .zu{position:absolute;top:calc(14px + env(safe-area-inset-top));right:16px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:#111;font-size:20px;cursor:pointer;z-index:2}
+
+/* Umschalter Team / Für Kunden / Einrichten intern – auf allen drei Seiten gleich */
+.umsch{display:flex;gap:4px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:4px;margin-left:22px;flex:0 0 auto}
+.umsch a{padding:8px 15px;border-radius:999px;font-weight:800;font-size:13px;text-decoration:none;color:var(--tx);white-space:nowrap;line-height:1.2}
+.umsch a:hover{background:rgba(255,255,255,.1)}
+.umsch a[aria-current=page],.umsch a[aria-current=page]:hover{background:var(--or);color:#1a1006}
+@media(max-width:1080px){nav .links a.opt{display:none}}
+@media(max-width:720px){html{scroll-padding-top:130px}nav .w{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;row-gap:10px}.umsch{flex:1 0 100%;margin-left:0}.umsch a{flex:1 1 auto;text-align:center;padding:9px 6px;font-size:12.5px}}
 </style>
 </head>
 <body>
@@ -209,8 +217,8 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <nav><div class="w">
 <img src="k.png" alt="Kriwet">
 <div class="brand">KRIWET<small>Team Kriwet AI</small></div>
-<div class="links"><a class="opt" href="#film">Film</a><a class="opt" href="#team">Team</a><a class="opt" href="#buero">Planungsbüro</a><a class="opt" href="#handbuch">Handbuch</a>
-<a class="btn s g opt" style="color:var(--tx)" href="Handbuch_Team-Kriwet-AI_R2.8.pdf" target="_blank" rel="noopener">PDF</a><a class="btn s g" style="color:var(--tx)" href="vertrieb/">Als Produkt</a><a class="btn s" href="onboarding/">Einrichten</a></div>
+<div class="links"><a class="opt" href="#film">Film</a><a class="opt" href="#team">Kollegen</a><a class="opt" href="#buero">Planungsbüro</a><a class="opt" href="#handbuch">Handbuch</a><a class="opt" href="Handbuch_Team-Kriwet-AI_R2.8.pdf" target="_blank" rel="noopener">PDF</a></div>
+<div class="umsch" role="navigation" aria-label="Seiten"><a href="./" aria-current="page">Team</a><a href="vertrieb/">Für Kunden</a><a href="onboarding/">Einrichten intern</a></div>
 </div></nav>
 
 <header class="hero"><div class="w">

@@ -240,17 +240,25 @@ footer p{margin:14px 0 0;max-width:90ch;font-size:13px}
 .rv.da{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.pill i{animation:none}}
+
+/* Umschalter Team / Für Kunden / Einrichten intern – auf allen drei Seiten gleich */
+.umsch{display:flex;gap:4px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:4px;margin-left:22px;flex:0 0 auto}
+.umsch a{padding:8px 15px;border-radius:999px;font-weight:800;font-size:13px;text-decoration:none;color:var(--tx);white-space:nowrap;line-height:1.2}
+.umsch a:hover{background:rgba(255,255,255,.1)}
+.umsch a[aria-current=page],.umsch a[aria-current=page]:hover{background:var(--or);color:#1a1006}
+@media(max-width:1080px){nav .links a.opt{display:none}}
+@media(max-width:720px){html{scroll-padding-top:130px}nav .w{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;row-gap:10px}.umsch{flex:1 0 100%;margin-left:0}.umsch a{flex:1 1 auto;text-align:center;padding:9px 6px;font-size:12.5px}}
 </style>
 </head>
 <body>
 
-<div class="entwurf">Entwurf zur Abstimmung · Preise, Testzugang und Kundenbereich sind noch nicht live · <a href="../">zurück zur Team-Seite</a> · <a href="../onboarding/">zur Einrichtung</a></div>
+<div class="entwurf">Entwurf zur Abstimmung · Preise, Testzugang und Kundenbereich sind noch nicht live</div>
 
 <nav><div class="w">
 <img src="k.png" alt="Kriwet">
 <div class="brand">KRIWET<small>Team Kriwet AI</small></div>
-<div class="links"><a class="opt" href="#probe">Ausprobieren</a><a class="opt" href="#team">Team</a><a class="opt" href="#buero">Planungsbüro</a><a class="opt" href="#preise">Preise</a><a class="opt" href="#kunden">Für Kunden</a>
-<a class="btn s" href="#probe">Jetzt testen</a></div>
+<div class="links"><a class="opt" href="#probe">Ausprobieren</a><a class="opt" href="#team">Kollegen</a><a class="opt" href="#buero">Planungsbüro</a><a class="opt" href="#preise">Preise</a><a class="opt" href="#kunden">Updates</a></div>
+<div class="umsch" role="navigation" aria-label="Seiten"><a href="../">Team</a><a href="../vertrieb/" aria-current="page">Für Kunden</a><a href="../onboarding/">Einrichten intern</a></div>
 </div></nav>
 
 <header class="hero"><div class="w">
@@ -431,7 +439,7 @@ footer p{margin:14px 0 0;max-width:90ch;font-size:13px}
 </div></section>
 
 <section id="kunden" style="background:var(--bg2)"><div class="w">
-<p class="eyebrow rv">Für Kunden</p>
+<p class="eyebrow rv">Für Bestandskunden</p>
 <h2 class="rv">Schon dabei? <em>Hier geht's weiter.</em></h2>
 <p class="sub rv">Das Team bleibt nicht stehen. Was ich auf meinen Baustellen dazulerne, landet im nächsten Release bei dir.</p>
 <div class="kunden">
