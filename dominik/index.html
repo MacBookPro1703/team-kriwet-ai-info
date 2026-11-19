@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Team Kriwet AI – für Dominik</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Team Kriwet AI für die Geschäftsführung: Kollegen, Aufbau, Lernschleife, Chef-Cockpit und Potenzial.">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<link rel="icon" type="image/png" href="../icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Kriwet AI Chef">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0F0E0D">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F0E0D;--bg2:#171513;--card:#1D1A17;--line:rgba(255,255,255,.09);--tx:#F4EFE8;--mut:#A99F94;--or:#F08A18;--or2:#FFB254;--cream:#F5F0E8}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.w{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+/* Navigation */
+nav{position:sticky;top:0;z-index:30;background:rgba(15,14,13,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+nav .w{display:flex;align-items:center;gap:14px;height:64px}
+nav img{width:34px;height:34px}
+nav .brand{font-weight:800;letter-spacing:.04em;font-size:16px;line-height:1.1}
+nav .brand small{display:block;font-weight:500;letter-spacing:.02em;color:var(--mut);font-size:12px}
+nav .links{margin-left:auto;display:flex;gap:22px;align-items:center}
+nav .links a{text-decoration:none;color:var(--mut);font-weight:600;font-size:14px}
+nav .links a:hover{color:var(--tx)}nav .links a.btn,nav .links a.btn:hover{color:#1a1006}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;background:var(--or);color:#1a1006;font-weight:800;text-decoration:none;border:0;font-size:15px;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 28px rgba(240,138,24,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(240,138,24,.5)}
+.btn.g{background:rgba(255,255,255,.06);color:var(--tx);box-shadow:none;border:1px solid var(--line)}
+.btn.g:hover{background:rgba(255,255,255,.12)}
+.btn.s{padding:9px 16px;font-size:13px}
+/* Hero */
+.hero{position:relative;padding:72px 0 40px;overflow:hidden}
+.hero:before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-420px;background:radial-gradient(closest-side,rgba(240,138,24,.32),rgba(240,138,24,0));pointer-events:none}
+.hero:after{content:"";position:absolute;width:700px;height:700px;left:-320px;top:200px;background:radial-gradient(closest-side,rgba(255,178,84,.12),rgba(255,178,84,0));pointer-events:none}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid rgba(240,138,24,.45);color:var(--or2);font-weight:700;font-size:13px;letter-spacing:.04em;background:rgba(240,138,24,.08)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--or);box-shadow:0 0 0 0 rgba(240,138,24,.7);animation:puls 2s infinite;display:inline-block}
+@keyframes puls{70%{box-shadow:0 0 0 10px rgba(240,138,24,0)}100%{box-shadow:0 0 0 0 rgba(240,138,24,0)}}
+h1{font-size:clamp(40px,7.4vw,92px);line-height:.98;letter-spacing:-.035em;margin:22px 0 22px;font-weight:900;max-width:14ch}
+h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,var(--or),var(--or2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(18px,2.2vw,22px);line-height:1.5;color:#D8CFC4;max-width:40ch;margin:0 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.film{position:relative;margin-top:54px;border-radius:24px;padding:6px;background:linear-gradient(135deg,rgba(240,138,24,.7),rgba(255,255,255,.08) 40%,rgba(240,138,24,.35));box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 120px rgba(240,138,24,.15)}
+.film video{display:block;width:100%;aspect-ratio:16/9;border-radius:19px;background:#000}
+.film .tag{position:absolute;left:22px;top:-14px;background:var(--or);color:#1a1006;font-weight:800;font-size:12px;letter-spacing:.06em;padding:6px 12px;border-radius:999px}
+section{padding:90px 0}
+.eyebrow{color:var(--or2);font-weight:800;letter-spacing:.14em;font-size:13px;text-transform:uppercase;margin:0 0 14px}
+h2{font-size:clamp(30px,4.6vw,56px);line-height:1.04;letter-spacing:-.03em;margin:0 0 18px;font-weight:900;max-width:18ch}
+.sub{color:var(--mut);font-size:18px;line-height:1.55;max-width:56ch;margin:0 0 40px}
+/* Brief */
+.brief{position:relative;background:var(--cream);color:#201E1C;border-radius:28px;padding:clamp(28px,5vw,64px);overflow:hidden}
+.brief:before{content:"„";position:absolute;right:28px;top:-40px;font-size:260px;font-weight:900;color:rgba(240,138,24,.18);line-height:1}
+.brief p{font-size:clamp(19px,2.3vw,24px);line-height:1.55;margin:0 0 18px;max-width:52ch;position:relative}
+.brief p.big{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.brief .sig{display:flex;align-items:center;gap:14px;margin-top:28px;font-weight:700}
+.brief .sig b{display:block;font-size:20px}.brief .sig span{color:#7A7068;font-weight:500}
+.brief .sig img{width:48px;height:48px;border-radius:12px}
+/* Zahlen */
+.zahlen{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+@media(max-width:820px){.zahlen{grid-template-columns:repeat(2,1fr)}}
+.zahl{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+.zahl b{display:block;font-size:clamp(34px,4.5vw,50px);font-weight:900;letter-spacing:-.03em;color:var(--or2)}
+.zahl span{color:var(--mut);font-size:15px;line-height:1.4}
+/* Team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:980px){.team{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.team{grid-template-columns:1fr}}
+.k{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s;display:flex;flex-direction:column}
+.k:hover{transform:translateY(-6px);border-color:rgba(240,138,24,.5)}
+.k .img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.k .img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.k:hover .img img{transform:scale(1.06)}
+.k .img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(29,26,23,.95))}
+.k .rolle{position:absolute;left:16px;top:16px;z-index:2;background:rgba(15,14,13,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);color:var(--or2);font-weight:800;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:999px}
+.k .body{padding:4px 22px 24px;margin-top:-34px;position:relative;z-index:2;display:flex;flex-direction:column;flex:1}
+.k h3{font-size:30px;margin:0 0 8px;font-weight:900;letter-spacing:-.02em}
+.k p{color:#CFC6BB;line-height:1.55;margin:0 0 16px;font-size:16px}
+.k .sagt{margin-top:auto;background:rgba(240,138,24,.1);border:1px solid rgba(240,138,24,.25);border-radius:14px;padding:12px 14px;font-size:15px}
+.k .sagt small{display:block;color:var(--or2);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.k .beta{color:var(--mut);font-size:12px;font-weight:600;margin-left:8px;vertical-align:middle}
+/* Planungsbüro */
+.buero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+@media(max-width:900px){.buero{grid-template-columns:1fr}}
+.bst{display:flex;flex-direction:column;gap:10px}
+.bs{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--tx);font-family:inherit;cursor:pointer;transition:border-color .2s,background .2s}
+.bs:hover{border-color:rgba(240,138,24,.5)}
+.bs i{flex:0 0 auto;width:26px;height:26px;border-radius:8px;border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:900;font-size:15px;color:transparent}
+.bs[aria-pressed=true]{background:rgba(240,138,24,.12);border-color:var(--or)}
+.bs[aria-pressed=true] i{background:var(--or);border-color:var(--or);color:#1a1006}
+.bs b{display:block;font-size:17px}.bs span{display:block;color:var(--mut);font-size:14px;margin-top:2px;line-height:1.4}
+.bs em{margin-left:auto;font-style:normal;color:var(--or2);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.auftrag{position:sticky;top:88px;background:var(--cream);color:#201E1C;border-radius:22px;padding:26px}
+@media(max-width:900px){.auftrag{position:static}}
+.auftrag h3{margin:0 0 4px;font-size:22px;font-weight:900;letter-spacing:-.01em}
+.auftrag .an{color:#7A7068;font-size:14px;margin-bottom:18px}
+.auftrag h4{margin:18px 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#B0620A}
+.auftrag ul{margin:0;padding:0;list-style:none}
+.auftrag li{padding:7px 0 7px 22px;position:relative;line-height:1.4;font-size:15px;border-bottom:1px solid rgba(0,0,0,.07)}
+.auftrag li:before{content:"";position:absolute;left:2px;top:14px;width:8px;height:8px;border-radius:2px;background:#F08A18}
+.auftrag .wer{display:flex;flex-wrap:wrap;gap:8px}
+.auftrag .wer span{background:#201E1C;color:#F5F0E8;border-radius:999px;padding:6px 12px;font-weight:700;font-size:13px}
+.auftrag .satz{margin-top:18px;background:#fff;border-radius:14px;padding:14px 16px;font-weight:700;font-size:16px;line-height:1.45}
+.auftrag .satz small{display:block;color:#B0620A;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.auftrag .leer{color:#7A7068;font-size:15px}
+.bkopf{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;margin-bottom:26px}
+.bkopf .sub{margin-bottom:40px}.bkopf .sub:last-child{margin-bottom:0}
+@media(max-width:900px){.bkopf{grid-template-columns:1fr;gap:26px}}
+.clip{border-radius:22px;padding:5px;background:linear-gradient(135deg,rgba(240,138,24,.7),rgba(255,255,255,.08) 45%,rgba(240,138,24,.35));box-shadow:0 24px 60px rgba(0,0,0,.5);transform-origin:center}
+.clip video{display:block;width:100%;aspect-ratio:16/9;border-radius:18px 18px 0 0;background:#000;cursor:pointer}
+.uhr{display:grid;grid-template-columns:repeat(4,1fr);background:#141210}
+.uhr span{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:8px 0;color:#6E655C;border-top:3px solid rgba(255,255,255,.08);transition:color .3s,border-color .3s,background .3s}
+.uhr span.an{color:#1a1006;background:var(--or2);border-color:var(--or)}
+.uhr span:nth-child(3).an{color:#fff;background:#3A4E9A;border-color:#7F95E8}
+.rund24{margin:0 0 26px;color:#D8CFC4;font-size:17px;line-height:1.55;max-width:70ch;border-left:4px solid #7F95E8;padding:4px 0 4px 16px}.rund24 b{color:var(--tx)}
+.cl-fuss{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);border-radius:0 0 18px 18px;padding:14px 16px}
+.cl-fuss b{display:block;font-size:16px}.cl-fuss span{color:var(--mut);font-size:13px}
+.stand{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 22px}.stand span{color:var(--mut);font-weight:700;font-size:14px;margin-right:4px}.stand button{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--tx);border-radius:999px;padding:10px 16px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer}.stand button:hover{background:var(--or);color:#1a1006;border-color:var(--or)}
+.phasen{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:1000px){.phasen{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.phasen{grid-template-columns:1fr}}
+.ph{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--or);border-radius:18px;padding:22px;display:flex;flex-direction:column}
+.ph small{color:var(--or2);font-weight:900;font-size:13px;letter-spacing:.1em}.ph b{font-size:21px;font-weight:900;margin:6px 0 12px;letter-spacing:-.01em}
+.ph ul{margin:0 0 16px;padding:0;list-style:none}.ph li{color:#CFC6BB;font-size:15px;line-height:1.45;padding:5px 0 5px 16px;position:relative}.ph li:before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--or)}
+.ph span{margin-top:auto;color:var(--mut);font-size:13px;font-weight:700}
+.tief{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}@media(max-width:860px){.tief{grid-template-columns:1fr}}
+.tf{background:linear-gradient(135deg,rgba(240,138,24,.14),rgba(255,255,255,.02));border:1px solid rgba(240,138,24,.3);border-radius:22px;padding:28px}
+.tf h3{font-size:clamp(22px,2.4vw,28px);line-height:1.15;margin:0 0 12px;font-weight:900;letter-spacing:-.02em}.tf p{color:#D8CFC4;line-height:1.6;margin:0;font-size:16px}.tf p.eyebrow{color:var(--or2);margin-bottom:10px;font-size:12px}
+.regler{margin-top:18px;background:var(--cream);color:#201E1C;border-radius:24px;padding:clamp(24px,4vw,44px)}
+.regler .eyebrow{color:#B0620A;margin-bottom:10px}.regler h3{font-size:clamp(26px,3.4vw,40px);font-weight:900;letter-spacing:-.02em;margin:0 0 62px;line-height:1.1}.regler h3 em{font-style:normal;color:#F08A18}
+.spur{position:relative;height:14px;border-radius:999px;background:rgba(0,0,0,.1);margin:0 0 18px}
+.fuell{position:absolute;left:0;top:0;bottom:0;width:62%;border-radius:999px;background:linear-gradient(90deg,#FFB254,#F08A18)}
+.knopf{position:absolute;left:62%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:#201E1C;border:4px solid #F5F0E8;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.knopf span{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#201E1C;color:#F5F0E8;font-weight:800;font-size:12px;padding:5px 10px;border-radius:999px}
+.pole{display:flex;justify-content:space-between;gap:24px;margin-bottom:24px}.pole div{max-width:32ch}.pole div:last-child{text-align:right}
+.pole b{display:block;font-size:16px}.pole span{color:#7A7068;font-size:14px;line-height:1.45}
+.regler>p:last-child{font-size:17px;line-height:1.6;margin:0;max-width:70ch}
+.profi{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+@media(max-width:900px){.profi{grid-template-columns:1fr}}
+.ehrlich{margin-top:22px;border-left:4px solid var(--or);padding:6px 0 6px 18px;color:#D8CFC4;font-size:17px;line-height:1.55;max-width:70ch}
+/* Kette */
+.kette{display:flex;align-items:center;gap:10px;overflow-x:auto;padding:6px 2px 18px;scrollbar-width:none}
+.kette::-webkit-scrollbar{display:none}
+.glied{flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;min-width:150px}
+.glied b{display:block;font-size:20px;font-weight:900}.glied span{color:var(--mut);font-size:14px}
+.glied.hl{background:var(--or);color:#1a1006;border-color:var(--or)}.glied.hl span{color:#3a2408}
+.pfeil{flex:0 0 auto;color:var(--or);font-size:24px;font-weight:900}
+.cent{margin-top:26px;font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.02em}
+.cent span{color:var(--mut);font-weight:500;font-size:18px;display:block;margin-top:6px;letter-spacing:0}
+/* Werkzeug + Regeln */
+.grid2{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.grid2{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+.wz{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.wz b{display:flex;align-items:center;gap:10px;font-size:18px;margin-bottom:6px}
+.wz b:before{content:"";width:10px;height:10px;border-radius:3px;background:var(--or);flex:0 0 auto}
+.wz span{color:var(--mut);line-height:1.5;font-size:15px}
+.regeln{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:700px){.regeln{grid-template-columns:1fr}}
+.rg{display:flex;gap:16px;align-items:flex-start;background:linear-gradient(135deg,rgba(240,138,24,.1),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:18px;padding:22px}
+.rg i{font-style:normal;flex:0 0 auto;width:40px;height:40px;border-radius:12px;background:var(--or);color:#1a1006;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:18px}
+.rg b{display:block;font-size:18px;margin-bottom:4px}.rg span{color:var(--mut);line-height:1.5;font-size:15px}
+/* Handbuch */
+.hb-kopf{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.hb-kopf .sub{margin:0}
+.nav-btns{display:flex;gap:10px;align-items:center}
+.rund{width:50px;height:50px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--tx);font-size:22px;cursor:pointer;font-weight:800}
+.rund:hover{background:var(--or);color:#1a1006}
+.zaehler{color:var(--mut);font-weight:700;min-width:64px;text-align:center}
+.slider{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px max(22px,calc((100vw - 1180px)/2 + 22px)) 26px;scrollbar-width:none}
+.slider::-webkit-scrollbar{display:none}
+.blatt{flex:0 0 min(86vw,880px);scroll-snap-align:center;cursor:zoom-in}
+.blatt img{width:100%;display:block;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.5);background:#fff;transition:transform .4s}
+.blatt:hover img{transform:translateY(-4px)}
+.blatt div{color:var(--mut);font-size:14px;margin-top:12px;display:flex;justify-content:space-between;font-weight:600}
+/* Finale */
+.finale{text-align:center;position:relative;overflow:hidden}
+.finale:before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(240,138,24,.22),rgba(240,138,24,0));pointer-events:none}
+.finale h2{margin:0 auto 18px;max-width:none;font-size:clamp(48px,9vw,120px)}
+.finale .sub{margin:0 auto 34px}
+.finale .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:34px 0 calc(40px + env(safe-area-inset-bottom));color:var(--mut);font-size:14px}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.da{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.pill i{animation:none}}
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:60;background:#0A0908;display:none;flex-direction:column;align-items:center;justify-content:center;padding:calc(16px + env(safe-area-inset-top)) 12px calc(16px + env(safe-area-inset-bottom))}
+#lb.auf{display:flex}
+#lb .buehne{flex:1;width:100%;max-width:1500px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#lb img{max-width:100%;max-height:100%;border-radius:10px}
+#lb img.r{animation:inR .45s cubic-bezier(.2,.8,.2,1)}#lb img.l{animation:inL .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes inR{from{opacity:0;transform:translateX(70px) scale(.97)}}@keyframes inL{from{opacity:0;transform:translateX(-70px) scale(.97)}}
+#lb .leiste{display:flex;gap:16px;align-items:center;margin-top:14px;color:#ddd}
+#lb .zu{position:absolute;top:calc(14px + env(safe-area-inset-top));right:16px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:#111;font-size:20px;cursor:pointer;z-index:2}
+
+/* Umschalter Team / Für Kunden / Einrichten intern – auf allen drei Seiten gleich */
+.umsch{display:flex;gap:4px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:4px;margin-left:22px;flex:0 0 auto}
+.umsch a{padding:8px 15px;border-radius:999px;font-weight:800;font-size:13px;text-decoration:none;color:var(--tx);white-space:nowrap;line-height:1.2}
+.umsch a:hover{background:rgba(255,255,255,.1)}
+.umsch a[aria-current=page],.umsch a[aria-current=page]:hover{background:var(--or);color:#1a1006}
+@media(max-width:1080px){nav .links a.opt{display:none}}
+@media(max-width:720px){html{scroll-padding-top:130px}nav .w{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;row-gap:10px}.umsch{flex:1 0 100%;margin-left:0}.umsch a{flex:1 1 auto;text-align:center;padding:9px 6px;font-size:12.5px}}
+
+/* Dominik-Seite */
+.drei{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+@media(max-width:860px){.drei{grid-template-columns:1fr}}
+.dk{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+.dk small{display:block;color:var(--or2);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.dk b{display:block;font-size:22px;font-weight:900;letter-spacing:-.01em;margin-bottom:8px}
+.dk span{color:#CFC6BB;line-height:1.55}
+.k .gf{margin-top:auto;background:rgba(240,138,24,.1);border:1px solid rgba(240,138,24,.25);border-radius:14px;padding:12px 14px;font-size:15px;line-height:1.45}
+.k .gf small{display:block;color:var(--or2);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.extra{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.extra div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;color:#CFC6BB;line-height:1.55}
+.extra b{color:var(--tx)}
+@media(max-width:760px){.extra{grid-template-columns:1fr}}
+/* Anatomie */
+.anat{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:26px;align-items:start}
+@media(max-width:860px){.anat{grid-template-columns:1fr}}
+.schicht{display:flex;flex-direction:column;gap:8px}
+.schicht button{font-family:inherit;text-align:left;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:14px;padding:14px 16px;display:flex;gap:14px;align-items:center;font-size:16px;font-weight:700;transition:all .25s}
+.schicht button i{font-style:normal;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:rgba(240,138,24,.14);color:var(--or2);font-weight:900;font-size:14px;flex:0 0 auto}
+.schicht button small{display:block;color:var(--mut);font-weight:500;font-size:13px;margin-top:2px}
+.schicht button.an{border-color:var(--or);background:linear-gradient(90deg,rgba(240,138,24,.22),rgba(240,138,24,.04));transform:translateX(8px)}
+.schicht button.an i{background:var(--or);color:#1a1006}
+.sinfo{background:var(--cream);color:#201E1C;border-radius:24px;padding:30px;min-height:330px;position:sticky;top:90px}
+.sinfo small{color:#B4650C;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+.sinfo h3{font-size:30px;margin:8px 0 12px;font-weight:900;letter-spacing:-.02em}
+.sinfo p{font-size:18px;line-height:1.55;margin:0 0 14px}
+.sinfo .bsp{background:#fff;border-left:4px solid var(--or);border-radius:10px;padding:14px 16px;font-size:16px;line-height:1.5}
+.sinfo .bsp b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#B4650C;margin-bottom:4px}
+.sinfo.neu{animation:ein .45s ease}
+@keyframes ein{from{opacity:.2;transform:translateY(10px)}to{opacity:1;transform:none}}
+/* Lernkreis */
+.kreis-w{display:grid;grid-template-columns:minmax(260px,480px) 1fr;gap:34px;align-items:center}
+@media(max-width:860px){.kreis-w{grid-template-columns:1fr}}
+.kreis{width:100%;height:auto}
+.kreis .kn circle{fill:#1D1A17;stroke:rgba(240,138,24,.6);stroke-width:2}
+.kreis .t1{fill:#FFB254;font-weight:900;font-size:18px}
+.kreis .t2{fill:#F4EFE8;font-weight:700;font-size:13px}
+.kreis .mitte1{fill:#F4EFE8;font-weight:900;font-size:44px;font-family:Inter,sans-serif;letter-spacing:-1px}
+.kreis .mitte2{fill:#A99F94;font-weight:600;font-size:16px;font-family:Inter,sans-serif}
+.kreis .lauf{transform-origin:260px 260px;animation:dreh 6s linear infinite}
+@keyframes dreh{to{transform:rotate(360deg)}}
+.kreis-txt{display:flex;flex-direction:column;gap:12px}
+.ks{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.ks b{display:block;color:var(--or2);margin-bottom:4px}.ks span{color:#CFC6BB;line-height:1.5}
+/* Cockpit */
+.cp{background:#0B0A09;border:1px solid rgba(240,138,24,.35);border-radius:26px;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 100px rgba(240,138,24,.1);margin-top:10px}
+.cp-kopf{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.cp-kopf b{font-size:18px;font-weight:900}.cp-kopf span{display:block;color:var(--mut);font-size:13px}
+.ansicht{display:flex;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:4px}
+.ansicht button{font-family:inherit;border:0;background:none;color:var(--tx);font-weight:800;font-size:13px;padding:8px 18px;border-radius:999px;cursor:pointer}
+.ansicht button.an{background:var(--or);color:#1a1006}
+.cp-kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:860px){.cp-kpi{grid-template-columns:1fr 1fr}}
+.cp-kpi>div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.cp-kpi small{color:var(--mut);font-size:12px;font-weight:700;letter-spacing:.04em}
+.cp-kpi b{display:block;font-size:34px;font-weight:900;letter-spacing:-.02em;margin:4px 0}
+.cp-kpi em{font-style:normal;color:#8FD48A;font-size:13px;font-weight:600}
+em.rot,.cp em.rot{color:#FF7A6B!important}em.or{color:var(--or2)!important}
+.cp-mitte{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:860px){.cp-mitte{grid-template-columns:1fr}}
+.cp-liste{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px}
+.cp-z{display:grid;grid-template-columns:14px 1fr 110px 84px;gap:12px;align-items:center;padding:12px 10px;border-bottom:1px solid var(--line)}
+.cp-z:last-child{border-bottom:0}
+.cp-z b{display:block;font-size:15px}.cp-z span{color:var(--mut);font-size:13px}
+.cp-z em{font-style:normal;font-size:12px;font-weight:800;color:#8FD48A;text-align:right}
+@media(max-width:560px){.cp-z{grid-template-columns:14px 1fr 70px}.cp-z em{display:none}}
+.am{width:12px;height:12px;border-radius:50%;display:block}
+.am.g{background:#5CCB63;box-shadow:0 0 10px rgba(92,203,99,.6)}.am.o{background:#F0B418;box-shadow:0 0 10px rgba(240,180,24,.6)}.am.r{background:#F05A48;box-shadow:0 0 10px rgba(240,90,72,.7);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.35}}
+.bar{height:8px;background:rgba(255,255,255,.07);border-radius:9px;overflow:hidden}
+.bar s{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--or),var(--or2));border-radius:9px;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.cp.los .bar s{width:var(--p)}
+.cp-tick{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;overflow:hidden;min-height:260px}
+.cp-tick small,.cp-team small{color:var(--or2);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+#tick{margin-top:10px;display:flex;flex-direction:column;gap:10px}
+.te{font-size:14px;line-height:1.4;color:#D8CFC4;border-left:2px solid var(--or);padding-left:10px;animation:ein .5s ease}
+.te b{color:var(--tx)}.te time{display:block;color:var(--mut);font-size:12px}
+.cp-team{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:12px}
+.ta{display:grid;grid-template-columns:150px 1fr 120px;gap:12px;align-items:center;margin-top:10px;font-size:14px}
+.ta em{font-style:normal;font-weight:800;color:#8FD48A;text-align:right}
+@media(max-width:560px){.ta{grid-template-columns:110px 1fr 70px;font-size:12px}}
+.cp-fuss{color:var(--mut);font-size:12px;margin:14px 4px 0;text-align:center}
+.cp .koll{display:none}
+.cp.kollm .chef{display:none}.cp.kollm .koll{display:block}
+.cp.kollm .cp-z.chef{display:none}
+/* Vergleich */
+.vgl{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.vk,.vz{display:grid;grid-template-columns:1fr 130px 130px;align-items:center}
+.vk{font-weight:900;font-size:14px;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.04)}
+.vk>div,.vz>div{padding:13px 16px}
+.vk>div:nth-child(n+2),.vz>div:nth-child(n+2){text-align:center}
+.vz{border-top:1px solid var(--line);font-size:15px}
+.vz>div:nth-child(2){color:#8FD48A;font-weight:800}
+.vz .nein{color:var(--mut)!important;font-weight:600!important;font-size:13px}
+.dm{background:rgba(240,138,24,.1);color:var(--or2)!important;font-weight:900!important}
+.vk .dm{color:var(--or2)}
+@media(max-width:600px){.vk,.vz{grid-template-columns:1fr 78px 78px;font-size:13px}.vk>div,.vz>div{padding:11px 8px}}
+h3 em.gr{font-style:normal;background:linear-gradient(90deg,var(--or),var(--or2));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* Frag */
+.frag{display:grid;grid-template-columns:minmax(240px,380px) 1fr;gap:16px}
+@media(max-width:860px){.frag{grid-template-columns:1fr}}
+.fq{display:flex;flex-direction:column;gap:8px}
+.fq button{font-family:inherit;text-align:left;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:14px;padding:14px 16px;font-size:15px;font-weight:700;transition:all .2s}
+.fq button:hover{border-color:rgba(240,138,24,.5)}.fq button.an{border-color:var(--or);background:rgba(240,138,24,.14)}
+.fa{background:var(--card);border:1px solid rgba(240,138,24,.35);border-radius:20px;padding:22px;min-height:240px}
+.fa-wer{color:var(--or2);font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+#fa{font-size:17px;line-height:1.6;color:#E6DED3;white-space:pre-line}
+#fa .q{display:block;margin-top:12px;color:var(--mut);font-size:13px}
+.cur{display:inline-block;width:8px;height:18px;background:var(--or);vertical-align:-3px;animation:blink 1s infinite;margin-left:2px}
+.cfeat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:60px}
+@media(max-width:900px){.cfeat{grid-template-columns:1fr 1fr}}@media(max-width:560px){.cfeat{grid-template-columns:1fr}}
+.cf{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.cf i{font-style:normal;display:inline-grid;place-items:center;width:38px;height:38px;border-radius:11px;background:rgba(240,138,24,.15);color:var(--or2);font-weight:900;font-size:18px;margin-bottom:10px}
+.cf b{display:block;font-size:18px;margin-bottom:6px}.cf span{color:#CFC6BB;line-height:1.5;font-size:15px}
+.zugang{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+@media(max-width:860px){.zugang{grid-template-columns:1fr}}
+.zugang div{border:1px dashed rgba(240,138,24,.45);border-radius:18px;padding:20px;background:rgba(240,138,24,.05)}
+.zugang b{display:block;color:var(--or2);margin-bottom:6px}.zugang span{color:#D8CFC4;line-height:1.55}
+/* Potenzial */
+.pot{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.pot{grid-template-columns:1fr 1fr}}@media(max-width:560px){.pot{grid-template-columns:1fr}}
+.pk{cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;transition:all .3s;position:relative;overflow:hidden}
+.pk:hover{border-color:rgba(240,138,24,.5);transform:translateY(-3px)}
+.pk small{color:var(--or2);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.pk b{display:block;font-size:20px;font-weight:900;margin:8px 0;letter-spacing:-.01em}
+.pk>span{color:#CFC6BB;line-height:1.5}
+.pk .mehr{max-height:0;overflow:hidden;transition:max-height .5s ease,margin .3s;color:#E6DED3;line-height:1.55;font-size:15px}
+.pk.auf{border-color:var(--or);background:linear-gradient(180deg,rgba(240,138,24,.14),var(--card) 60%)}
+.pk.auf .mehr{max-height:260px;margin-top:12px}
+.pk .zeit{position:absolute;right:16px;top:18px;font-size:11px;font-weight:800;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:4px 9px}
+.ehr{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.ehr div{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:18px}
+.ehr b{display:block;margin-bottom:4px;color:#201E1C}.ehr span{color:#4A433D;line-height:1.5}
+@media(max-width:700px){.ehr{grid-template-columns:1fr}}
+/* Todo */
+.todo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.todo{grid-template-columns:1fr}}
+.td{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;cursor:pointer;transition:all .25s}
+.td .bx{flex:0 0 26px;height:26px;border-radius:8px;border:2px solid rgba(240,138,24,.6);display:grid;place-items:center;font-weight:900;color:#1a1006}
+.td b{display:block;margin-bottom:4px}.td span{color:#CFC6BB;line-height:1.5;font-size:15px}
+.td.ok{border-color:rgba(92,203,99,.5);background:rgba(92,203,99,.06)}
+.td.ok .bx{background:#5CCB63;border-color:#5CCB63}
+.td.ok b{text-decoration:line-through;text-decoration-color:rgba(255,255,255,.4)}
+footer{padding:40px 0 60px;border-top:1px solid var(--line)}
+footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--mut);font-size:14px}
+footer b{display:block;color:var(--tx)}
+</style>
+</head>
+<body>
+
+<nav><div class="w">
+<img src="../k.png" alt="Kriwet">
+<div class="brand">KRIWET<small>Team Kriwet AI · für Dominik</small></div>
+<div class="links"><a href="#kern">Kurz gesagt</a><a href="#team">Kollegen</a><a href="#anatomie">Aufbau</a><a href="#lernen">Lernen</a><a href="#cockpit">Chef-Cockpit</a><a href="#potenzial">Potenzial</a><a href="#heute">Heute klären</a></div>
+</div></nav>
+
+<header class="hero"><div class="w">
+<span class="pill rv"><i></i>FÜR DOMINIK · GESCHÄFTSFÜHRUNG</span>
+<h1 class="rv d1">Team Kriwet AI. <em>Was es ist. Was es kann. Wohin es geht.</em></h1>
+<p class="lead rv d2">Kein Prospekt, sondern der echte Stand. Geschrieben für dich als Chef: wie die Kollegen ticken, was wir ihnen ins Stammbuch geschrieben haben und was da für Kriwet noch drinsteckt.</p>
+<div class="cta rv d3"><a class="btn" href="#film" onclick="document.getElementById('v').play()">▶ Film ansehen</a><a class="btn g" href="#cockpit">Direkt zum Chef-Cockpit</a></div>
+<div class="film rv" id="film"><span class="tag">FILM · 1:10 · DAS TEAM</span>
+<video id="v" controls playsinline preload="metadata" poster="../team/gruppe.jpg" src="../film-team-kriwet.mp4"></video>
+</div>
+</div></header>
+
+<section id="kern"><div class="w">
+<div class="brief rv">
+<p class="big">Dominik, kurz vorweg: Das ist kein Chatbot, dem man Fragen stellt.</p>
+<p>Das ist ein kleines Planungsbüro, das in unserem Haus sitzt. Sechs Kollegen mit festen Aufgaben, festen Regeln und einem Gedächtnis, das nicht vergisst. Ich hab's seit dem Sommer auf echten Baustellen aufgebaut. Jede Regel da drin ist entstanden, weil irgendwo was schiefging.</p>
+<p>Was mir wichtig ist: Die Verantwortung bleibt bei uns. Das Team schlägt vor, rechnet, zeichnet, sortiert. Rausgeschickt, bestellt oder gelöscht wird nur, was einer von uns freigibt.</p>
+<div class="sig"><img src="../icon-180.png" alt=""><div><b>Jörg</b><span>Projektleitung · Kalkulation · Kriwet</span></div></div>
+</div>
+<div class="zahlen">
+<div class="zahl rv"><b>6</b><span>feste Kollegen mit eigener Rolle</span></div>
+<div class="zahl rv d1"><b>25+</b><span>Fähigkeiten, die sie abrufen können</span></div>
+<div class="zahl rv d2"><b>26</b><span>Grundregeln, die für alle gelten</span></div>
+<div class="zahl rv d3"><b>400+</b><span>gelernte Korrekturen aus echten Projekten</span></div>
+</div>
+<div class="drei">
+<div class="dk rv"><small>Für dich in einem Satz</small><b>Fleißarbeit raus, Kopf frei.</b><span>Massen, Angebote, Pläne, Taifun-Import, Belege, Postfach. Was früher Tage gedauert hat, liegt nach Stunden zur Prüfung da.</span></div>
+<div class="dk rv d1"><small>Was es für Kriwet heißt</small><b>Wissen bleibt im Haus.</b><span>Wie wir kalkulieren, worauf wir achten, wo die Fallen liegen: Das steht jetzt aufgeschrieben in den Kollegen. Nicht mehr nur im Kopf von einzelnen Leuten.</span></div>
+<div class="dk rv d2"><small>Was es kostet</small><b>Nutzung statt Personal.</b><span>Claude-Lizenzen je Kollege plus Rechenzeit. Jede größere Aktion wird mitgezählt (Token-Uhr). Keine Einstellung, keine Einarbeitung, kein Urlaub.</span></div>
+</div>
+</div></section>
+
+<section id="team" style="padding-top:0"><div class="w">
+<p class="eyebrow rv">Die Kollegen</p>
+<h2 class="rv">Sechs Rollen. <em>Jede mit klarem Auftrag.</em></h2>
+<p class="sub rv">Man redet mit ihnen wie mit Kollegen. Hinter jedem Namen steckt eine ausführliche Stellenbeschreibung mit Arbeitsanweisung, Regeln und Erfahrungswissen. Die Namen sind kein Gag: Sie sorgen dafür, dass jeder sofort weiß, wer wofür zuständig ist.</p>
+<div class="team">
+<article class="k rv"><div class="img"><span class="rolle">Projektgedächtnis</span><img loading="lazy" src="../team/anke.jpg" alt="Anke"></div><div class="body"><h3>Anke</h3><p>Merkt sich alles über alle Projekte: was offen ist, wer uns was schuldet, welche Frist läuft. Schreibt jede Korrektur mit, damit das Team daraus lernt.</p><div class="gf"><small>Für die Firma</small>Kein Projektwissen geht mehr verloren, auch nicht bei Urlaub, Krankheit oder Wechsel.</div></div></article>
+<article class="k rv d1"><div class="img"><span class="rolle">Kalkulation</span><img loading="lazy" src="../team/konrad.jpg" alt="Konrad"></div><div class="body"><h3>Konrad</h3><p>Pläne oder LV rein, bepreistes Angebot raus. Mit Massen, Excel, GAEB und Taifun-Datei aus einer Datenquelle. Prüft sich selbst gegen unseren Preisspiegel.</p><div class="gf"><small>Für die Firma</small>Mehr Angebote in derselben Zeit. Schneller beim Kunden, nachvollziehbare Zahlen.</div></div></article>
+<article class="k rv d2"><div class="img"><span class="rolle">Werkplanung</span><img loading="lazy" src="../team/ernst.jpg" alt="Ernst"></div><div class="body"><h3>Ernst</h3><p>Wandansichten, Deckenspiegel, Boden, Sanitär, Rückbau. Plansätze, nach denen der Nachunternehmer ohne Rückfrage baut. Mengen kommen aus derselben Quelle wie das Angebot.</p><div class="gf"><small>Für die Firma</small>Plan = Angebot. Weniger Nachträge, weniger Streit auf der Baustelle.</div></div></article>
+<article class="k rv"><div class="img"><span class="rolle">Taifun</span><img loading="lazy" src="../team/arnold.jpg" alt="Arnold"></div><div class="body"><h3>Arnold</h3><p>Spielt Angebote und Bestellungen direkt in Taifun ein. Ohne Abtippen, ohne doppelte Kunden. Bereitet Rechnungsvorlagen für die Buchhaltung vor.</p><div class="gf"><small>Für die Firma</small>Taifun bleibt sauber. Fehler durch Abtippen fallen weg.</div></div></article>
+<article class="k rv d1"><div class="img"><span class="rolle">Projektmanagement</span><img loading="lazy" src="../team/hasso.jpg" alt="Hasso"></div><div class="body"><h3>Hasso</h3><p>Nimmt einen Auftrag an, legt die Projektakte an, verteilt die Arbeit an Konrad, Ernst und Arnold und hält die Fäden zusammen. Ein Ansprechpartner für das ganze Projekt.</p><div class="gf"><small>Für die Firma</small>Jedes Projekt läuft nach demselben Schema. Egal, wer es betreut.</div></div></article>
+<article class="k rv d2"><div class="img"><span class="rolle">Belege</span><img loading="lazy" src="../team/beate.jpg" alt="Beate"></div><div class="body"><h3>Beate<span class="beta">Beta</span></h3><p>Aus Quittungen und Nachunternehmer-Rechnungen wird ein geprüftes Paket für die Buchhaltung. Prüft Pflichtangaben, findet Dubletten.</p><div class="gf"><small>Für die Firma</small>Weniger Rückfragen aus der Buchhaltung, schnellerer Monatsabschluss.</div></div></article>
+</div>
+<div class="extra rv">
+<div><b>Dazu im Werkzeugkasten:</b> Morning Briefing (Postfach in zehn Minuten), Mailentwürfe zum Freigeben, Voicenotes und WhatsApp auswerten, Revisionsordner und Bautagebuch, Schlussrechnungsentwurf, Ordner aufräumen, Anhänge versionieren.</div>
+<div><b>Und im Hintergrund:</b> der Sachverständige. Er bringt jede Verbesserung geprüft zu allen Kollegen bei Kriwet. Dazu unten mehr.</div>
+</div>
+</div></section>
+
+<section id="anatomie" style="background:var(--bg2)"><div class="w">
+<p class="eyebrow rv">Wie ein Kollege aufgebaut ist</p>
+<h2 class="rv">Was steckt eigentlich <em>in so einem Mitarbeiter?</em></h2>
+<p class="sub rv">Technisch heißt das „Skill“. Auf Deutsch: eine Stellenbeschreibung, die Claude jedes Mal liest, bevor es loslegt. Sechs Schichten, am Beispiel Konrad. Tipp eine Schicht an.</p>
+<div class="anat">
+<div class="schicht rv" id="sch"></div>
+<div class="sinfo rv d1" id="si" aria-live="polite"></div>
+</div>
+<p class="ehrlich rv" style="margin-top:30px">Der Unterschied zu „einfach mal ChatGPT fragen“: Ein normaler Chat fängt jedes Mal bei null an. Unsere Kollegen fangen bei dem an, was wir in fünf Monaten gelernt haben.</p>
+</div></section>
+
+<section id="stammbuch"><div class="w">
+<p class="eyebrow rv">Ins Stammbuch geschrieben</p>
+<h2 class="rv">26 Grundregeln. <em>Die wichtigsten zehn.</em></h2>
+<p class="sub rv">Die gelten für jeden Kollegen, in jedem Projekt, bei jedem Mitarbeiter von uns. Keine davon ist aus Theorie entstanden.</p>
+<div class="regeln">
+<div class="rg rv"><i>1</i><div><b>Nichts geht raus ohne Freigabe</b><span>Mails liegen als Entwurf in Outlook. Gesendet wird nur, was ein Mensch ausdrücklich freigibt.</span></div></div>
+<div class="rg rv d1"><i>2</i><div><b>Nichts wird gelöscht</b><span>Aussortiertes wandert in einen Ablageordner. Löschen nur mit Zustimmung, mit Angabe, wo die Sicherung liegt.</span></div></div>
+<div class="rg rv"><i>3</i><div><b>Jede Zahl hat eine Quelle</b><span>Menge mit Planbezug, Preis mit Herkunft. Was geschätzt ist, steht als geschätzt drin.</span></div></div>
+<div class="rg rv d1"><i>4</i><div><b>Fehlschläge werden sofort gemeldet</b><span>Datei nicht lesbar, Verbindung weg, Quelle nur halb gelesen: Das muss sofort auf den Tisch. Nie so tun, als wäre alles drin.</span></div></div>
+<div class="rg rv"><i>5</i><div><b>Erst fragen, dann losrennen</b><span>Bei Kalkulation und Angebot wird bei Unsicherheit gefragt. In zwei Sätzen Alltagssprache, ohne Kürzel.</span></div></div>
+<div class="rg rv d1"><i>6</i><div><b>Doppelt prüfen vor Versand</b><span>Plausibilität, Benchmark gegen frühere Projekte, Abgleich Angebot gegen Pläne. Erst dann geht ein Angebot zur Freigabe.</span></div></div>
+<div class="rg rv"><i>7</i><div><b>Kriwet-Optik, immer</b><span>Was rausgeht, trägt Kriwet-Briefpapier und Kriwet-Layout. Angebots-PDF im gewohnten Taifun-Druckbild.</span></div></div>
+<div class="rg rv d1"><i>8</i><div><b>Ordnung im Projektordner</b><span>Alles vom Tag liegt im Tagesordner. Kurze Pfade, damit jeder Kollege jede Datei auch über OneDrive öffnen kann.</span></div></div>
+<div class="rg rv"><i>9</i><div><b>Keine KI-Spuren im Kalender</b><span>Einträge sehen aus wie von Hand geschrieben, neutral, ohne Wertung. Kollegen und Kunden sehen sie ja.</span></div></div>
+<div class="rg rv d1"><i>10</i><div><b>Jede Korrektur wird Regel</b><span>Sagt einer von uns „so nicht“, wird das sofort mitgeschrieben und landet bei der nächsten Runde in der Stellenbeschreibung.</span></div></div>
+</div>
+</div></section>
+
+<section id="lernen" style="background:var(--bg2)"><div class="w">
+<p class="eyebrow rv">Gedächtnis und Lernen</p>
+<h2 class="rv">Das Team wird <em>jede Woche besser.</em></h2>
+<p class="sub rv">Das ist für mich der eigentliche Wert. Nicht was das Team heute kann, sondern dass es aus unserer Arbeit lernt. So läuft der Kreis:</p>
+<div class="kreis-w">
+<svg class="kreis rv" viewBox="0 0 520 520" aria-label="Lernkreis">
+<defs><linearGradient id="gk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F08A18"/><stop offset="1" stop-color="#FFB254"/></linearGradient></defs>
+<circle cx="260" cy="260" r="190" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+<circle cx="260" cy="260" r="190" fill="none" stroke="url(#gk)" stroke-width="3" stroke-dasharray="40 1154" class="lauf"/>
+<g class="kn" font-family="Inter,sans-serif" text-anchor="middle">
+<g transform="translate(260,70)"><circle r="44"/><text y="-4" class="t1">1</text><text y="16" class="t2">Arbeit</text></g>
+<g transform="translate(441,201)"><circle r="44"/><text y="-4" class="t1">2</text><text y="16" class="t2">Korrektur</text></g>
+<g transform="translate(372,414)"><circle r="44"/><text y="-4" class="t1">3</text><text y="16" class="t2">Mitschrift</text></g>
+<g transform="translate(148,414)"><circle r="44"/><text y="-4" class="t1">4</text><text y="16" class="t2">Neue Regel</text></g>
+<g transform="translate(79,201)"><circle r="44"/><text y="-4" class="t1">5</text><text y="16" class="t2">Release</text></g>
+</g>
+<text x="260" y="250" text-anchor="middle" class="mitte1">besser</text><text x="260" y="282" text-anchor="middle" class="mitte2">mit jeder Runde</text>
+</svg>
+<div class="kreis-txt">
+<div class="ks rv"><b>1 · Arbeit</b><span>Ein Kollege kalkuliert, zeichnet oder sortiert in einem echten Projekt.</span></div>
+<div class="ks rv"><b>2 · Korrektur</b><span>Wir sagen, was nicht passt: „zu glatt“, „Menge falsch“, „so nicht“.</span></div>
+<div class="ks rv"><b>3 · Mitschrift</b><span>Anke schreibt das sofort als Lernzeile auf. Über 400 sind es inzwischen.</span></div>
+<div class="ks rv"><b>4 · Neue Regel</b><span>Gesammelt, sortiert, genau an einer Stelle eingebaut. Keine Regel doppelt, keine gegeneinander.</span></div>
+<div class="ks rv"><b>5 · Release</b><span>Der Sachverständige prüft automatisch und bringt den neuen Stand zu allen Kollegen.</span></div>
+</div>
+</div>
+<div class="profi" style="margin-top:50px">
+<div class="wz rv"><b>Projekt-Notizbuch</b><span>Jedes Projekt hat einen aktuellen Stand: offene Punkte, Fristen, Zusagen von Dritten mit Datum. Dazu eine Chronik, in der nichts überschrieben wird.</span></div>
+<div class="wz rv d1"><b>Übergabeprotokolle</b><span>Wird ein Chat voll, schreibt das Team ein Protokoll. Der nächste macht ohne Qualitätsverlust weiter. Über 20 Projekte laufen so.</span></div>
+<div class="wz rv d2"><b>Fallenwissen</b><span>Was in Taifun, Outlook oder am Bildschirm schon mal schiefging, steht drin. Derselbe Fehler passiert nicht zweimal.</span></div>
+</div>
+</div></section>
+
+<section id="release"><div class="w">
+<p class="eyebrow rv">So kommt es zu den Kollegen</p>
+<h2 class="rv">Einer forscht, <em>alle profitieren.</em></h2>
+<p class="sub rv">Neues entwickle ich erst mal an meinen Projekten. Wenn es sitzt, macht der Sachverständige daraus ein Release für den Firmenordner TEAM KRIWET AI auf dem Server.</p>
+<div class="kette rv">
+<div class="glied hl"><b>Entwicklung</b><span>an echten Projekten</span></div><div class="pfeil">→</div>
+<div class="glied"><b>Sachverständiger</b><span>baut das Release</span></div><div class="pfeil">→</div>
+<div class="glied"><b>Abnahme</b><span>nur bei GRÜN</span></div><div class="pfeil">→</div>
+<div class="glied"><b>Testkollege</b><span>„Max Mustermann“</span></div><div class="pfeil">→</div>
+<div class="glied hl"><b>Alle bei Kriwet</b><span>gleicher Stand</span></div>
+</div>
+<p class="cent rv">Kein Release ohne Abnahme GRÜN.<span>Jede neue Fehlerart wird zuerst als Prüfung eingebaut, dann behoben, und zwar an der Quelle. Jeder Kollege richtet sich das Team per Einrichtungsassistent für sich ein: eigenes Postfach, eigener Kalender, eigene Projekte.</span></p>
+</div></section>
+
+<section id="praxis" style="padding-top:0"><div class="w">
+<p class="eyebrow rv">Echter Einsatz</p>
+<h2 class="rv">LVATE Hamburg. <em>Von Juni bis heute.</em></h2>
+<p class="sub rv">Zwei Minuten, die zeigen, wie die Kollegen entstanden sind: immer dann, wenn im Büro oder auf der Baustelle was gefehlt hat.</p>
+<div class="film rv" style="margin-top:0"><span class="tag">FILM · 2:10 · LVATE HAMBURG</span>
+<video id="v3" controls playsinline preload="none" poster="../lvate-rueckblick.jpg" src="../lvate-rueckblick.mp4"></video>
+</div>
+</div></section>
+
+<section id="cockpit" style="background:var(--bg2)"><div class="w">
+<span class="pill rv"><i></i>NEU · NUR FÜR DICH</span>
+<h2 class="rv" style="margin-top:18px">Das Chef-Cockpit. <em>Alles im Blick, ohne nachzufragen.</em></h2>
+<p class="sub rv">Wie heute besprochen: Ich baue eine Ebene ein, die nur du siehst. Jeder Kollege von uns führt sowieso Notizbücher mit Stand, Fristen und Zahlen. Das Cockpit liest die zusammen und macht daraus deine Übersicht. Live, auf Zuruf oder jeden Montag automatisch.</p>
+
+<div class="cp chefm rv" id="cp">
+<div class="cp-kopf"><div><b>Kriwet · Cockpit</b><span id="cpz">Donnerstag, 19.11. · Stand live</span></div><div class="ansicht" role="group" aria-label="Ansicht"><button type="button" onclick="ans(0)" id="a0">Kollege</button><button type="button" onclick="ans(1)" id="a1" class="an">Dominik</button></div></div>
+<div class="cp-kpi">
+<div class="chef"><small>Laufende Projekte</small><b data-z="14">0</b><em>alle Projektleiter</em></div><div class="koll"><small>Meine Projekte</small><b data-z="4">0</b><em>davon 1 neu</em></div>
+<div><small>Angebote offen</small><b data-z="9">0</b><em>3 warten auf Freigabe</em></div>
+<div class="chef"><small>Auftragsvolumen offen</small><b data-z="1.86" data-e=" Mio €">0</b><em>Pipeline nach Wahrscheinlichkeit</em></div>
+<div><small>Fristen 7 Tage</small><b data-z="6">0</b><em class="rot">1 überfällig</em></div>
+</div>
+<div class="cp-mitte">
+<div class="cp-liste">
+<div class="cp-z"><i class="am g"></i><div><b>Fitnessstudio Düsseldorf</b><span>Ausführung · Woche 3 von 6</span></div><div class="bar"><s style="--p:52%"></s></div><em>im Plan</em></div>
+<div class="cp-z"><i class="am g"></i><div><b>Retail Hamburg</b><span>Abrechnung · Schlussrechnung im Entwurf</span></div><div class="bar"><s style="--p:92%"></s></div><em>im Plan</em></div>
+<div class="cp-z"><i class="am o"></i><div><b>Gastro Berlin</b><span>Nachtrag Elektro offen seit 9 Tagen</span></div><div class="bar"><s style="--p:64%"></s></div><em class="or">beobachten</em></div>
+<div class="cp-z chef"><i class="am r"></i><div><b>Optiker Frankfurt</b><span>NU-Zusage Trockenbau fehlt · Start Montag</span></div><div class="bar"><s style="--p:18%"></s></div><em class="rot">handeln</em></div>
+<div class="cp-z chef"><i class="am g"></i><div><b>Store Oberhausen</b><span>Angebot beim Kunden · Rückmeldung KW 48</span></div><div class="bar"><s style="--p:30%"></s></div><em>im Plan</em></div>
+</div>
+<div class="cp-tick"><small>Was gerade passiert</small><div id="tick"></div></div>
+</div>
+<div class="cp-team chef"><small>Team-Auslastung (nur Chef-Ansicht)</small><div class="ta"><span>Projektleiter A</span><div class="bar"><s style="--p:86%"></s></div><em>86 %</em></div><div class="ta"><span>Projektleiter B</span><div class="bar"><s style="--p:61%"></s></div><em>61 %</em></div><div class="ta"><span>Projektleiter C</span><div class="bar"><s style="--p:94%"></s></div><em class="rot">94 %</em></div><div class="ta"><span>KI-Kosten Monat</span><div class="bar"><s style="--p:38%"></s></div><em>38 % vom Budget</em></div></div>
+<p class="cp-fuss"><span id="ansh">Chef-Ansicht: alle Projekte, Volumen, Auslastung</span> · Beispieldaten zur Veranschaulichung · im echten Cockpit stehen hier unsere Projekte</p>
+</div>
+
+
+<h3 class="rv" style="font-size:28px;margin:60px 0 10px;font-weight:900">Ein Dashboard für alle. <em class="gr">Mit Chef-Ebene.</em></h3>
+<p class="sub rv" style="margin-bottom:24px">Jeder Kollege bekommt sein Dashboard: seine Projekte, seine Fristen, seine offenen Angebote. Deine Fassung ist dasselbe Dashboard, nur mit Funktionen, die die anderen nicht haben. Ein Werkzeug, zwei Berechtigungen. Oben im Cockpit kannst du umschalten.</p>
+<div class="vgl rv">
+<div class="vk"><div></div><div>Kollege</div><div class="dm">Dominik</div></div>
+<div class="vz"><div>Eigene Projekte mit Ampel, Fristen, offenen Punkten</div><div>✓</div><div class="dm">✓</div></div>
+<div class="vz"><div>Eigene Angebote und was auf Freigabe wartet</div><div>✓</div><div class="dm">✓</div></div>
+<div class="vz"><div>Morning Briefing und Wochenaufgaben</div><div>✓</div><div class="dm">✓</div></div>
+<div class="vz"><div>Alle Projekte aller Projektleiter auf einer Seite</div><div class="nein">–</div><div class="dm">✓</div></div>
+<div class="vz"><div>Auftragsvolumen, Pipeline, Trefferquote</div><div class="nein">–</div><div class="dm">✓</div></div>
+<div class="vz"><div>Soll/Ist und Nachkalkulation über alle Projekte</div><div class="nein">nur eigene</div><div class="dm">✓</div></div>
+<div class="vz"><div>Einkaufspreise und Preisspiegel der Firma</div><div class="nein">nach Freigabe</div><div class="dm">✓</div></div>
+<div class="vz"><div>Auslastung der Projektleiter</div><div class="nein">–</div><div class="dm">✓</div></div>
+<div class="vz"><div>KI-Kosten je Projekt und Kollege</div><div class="nein">nur eigene</div><div class="dm">✓</div></div>
+<div class="vz"><div>Frühwarnung über alle Projekte und Montagsbericht der Firma</div><div class="nein">–</div><div class="dm">✓</div></div>
+<div class="vz"><div>Zwischenstand jedes Projekts auf Zuruf ziehen</div><div class="nein">nur eigene</div><div class="dm">✓</div></div>
+</div>
+
+<h3 class="rv" style="font-size:28px;margin:60px 0 10px;font-weight:900">Frag das Cockpit.</h3>
+<p class="sub rv" style="margin-bottom:24px">So würdest du es nutzen. Ein Satz, eine Antwort mit Zahlen und Quelle. Tipp eine Frage an.</p>
+<div class="frag rv">
+<div class="fq" id="fq"></div>
+<div class="fa" aria-live="polite"><div class="fa-wer">Cockpit</div><div id="fa">Tipp links eine Frage an.</div></div>
+</div>
+
+<div class="cfeat">
+<div class="cf rv"><i>◉</i><b>Projektampel</b><span>Alle Projekte auf einer Seite, grün, gelb, rot. Mit dem Grund, warum etwas gelb ist, und wer dran ist.</span></div>
+<div class="cf rv d1"><i>€</i><b>Soll und Ist</b><span>Kalkuliert gegen tatsächlich beauftragt und abgerechnet. Nachkalkulation je Projekt und Gewerk, auf Knopfdruck.</span></div>
+<div class="cf rv d2"><i>↗</i><b>Angebots-Pipeline</b><span>Was ist raus, was wartet auf Freigabe, wie viel Volumen steht in Aussicht. Trefferquote über die Zeit.</span></div>
+<div class="cf rv"><i>⏱</i><b>Fristen und Einfordern</b><span>Wer schuldet uns was seit wann: Nachunternehmer-Zusagen, Kundenfreigaben, Zahlungen. Mit Zähler, wie oft schon verschoben.</span></div>
+<div class="cf rv d1"><i>⚠</i><b>Frühwarnung</b><span>Nachträge, Mehr- und Minderkosten, Bauzeit wackelt: Das Cockpit meldet sich, bevor es teuer wird.</span></div>
+<div class="cf rv d2"><i>✉</i><b>Montagsbericht</b><span>Jeden Montag früh eine Seite: was letzte Woche passiert ist, was diese Woche brennt. Ohne dass einer was zusammenstellt.</span></div>
+<div class="cf rv"><i>⌁</i><b>Zwischenstand auf Zuruf</b><span>„Wie steht Hamburg?“ reicht. Du bekommst den Stand aus dem Projekt-Notizbuch, nicht aus dem Gedächtnis von irgendwem.</span></div>
+<div class="cf rv d1"><i>Σ</i><b>KI-Kosten-Uhr</b><span>Was hat das Team diesen Monat gekostet, je Projekt und je Kollege. Damit du den Nutzen gegen die Kosten halten kannst.</span></div>
+<div class="cf rv d2"><i>⌂</i><b>Preisspiegel der Firma</b><span>Unsere Nachunternehmer-Preise über alle Projekte. Wo liegen wir, wer ist teuer geworden, was ist marktüblich.</span></div>
+</div>
+<div class="zugang rv">
+<div><b>Wer sieht was?</b><span>Das Cockpit liegt in einem eigenen Bereich, nur für dich. Die Kollegen sehen ihre Projekte, du siehst alle. Einkaufspreise und Preisspiegel sind nur dort sichtbar, wo du es freigibst.</span></div>
+<div><b>Woher kommen die Daten?</b><span>Aus dem, was ohnehin entsteht: Projekt-Notizbücher, Angebote, Taifun, Postfach. Niemand muss für das Cockpit extra etwas pflegen.</span></div>
+<div><b>Wie ist der Stand?</b><span>Die Notizbücher und Zahlen gibt es schon. Das Dashboard baue ich jetzt Schritt für Schritt auf: erst die Kollegen-Fassung mit Projektampel, dann deine Chef-Ebene mit Montagsbericht und Gesamtübersicht.</span></div>
+</div>
+</div></section>
+
+<section id="potenzial"><div class="w">
+<p class="eyebrow rv">Was noch drin ist</p>
+<h2 class="rv">Wohin das gehen kann. <em>Für Kriwet als Firma.</em></h2>
+<p class="sub rv">Alles hier ist mit dem, was schon steht, machbar. Manches in Wochen, manches braucht mehr Zeit. Tipp eine Karte an für ein Beispiel.</p>
+<div class="pot" id="pot"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="w">
+<div class="regler rv">
+<p class="eyebrow">Ehrlich gesagt</p>
+<h3>Was das Team <em>nicht ist.</em></h3>
+<div class="ehr">
+<div><b>Kein Ersatz für Verantwortung</b><span>Wir prüfen und geben frei. Das bleibt so, auch wenn das Team immer selbstständiger wird.</span></div>
+<div><b>Nur so gut wie das, was reingeht</b><span>Schlechte Pläne, unklare LVs: Das Team sagt dann, was fehlt. Aber zaubern kann es nicht.</span></div>
+<div><b>Nicht fertig</b><span>Es wächst jede Woche. Manches holpert noch, gerade bei der Bedienung von Programmen am Bildschirm. Das wird dokumentiert und besser.</span></div>
+<div><b>Nicht kostenlos</b><span>Lizenzen und Rechenzeit kosten Geld. Deshalb zählen wir mit und machen den Nutzen sichtbar.</span></div>
+</div>
+</div>
+</div></section>
+
+<section id="heute" style="background:var(--bg2)"><div class="w">
+<p class="eyebrow rv">Für unser Gespräch</p>
+<h2 class="rv">Was wir heute <em>entscheiden sollten.</em></h2>
+<p class="sub rv">Hak ab, was wir besprochen haben. Bleibt nur auf diesem Gerät gespeichert.</p>
+<div class="todo" id="todo"></div>
+</div></section>
+
+<footer><div class="w">
+<div><b>Team Kriwet AI</b><span>Kriwet Projektmanagement GmbH · Stand 19.11.2026 · vorbereitet für Dominik</span></div>
+<div><a href="../">Team-Seite für die Kollegen</a> · <a href="../vertrieb/">Seite für Kunden</a></div>
+</div></footer>
+
+<script>
+(function(){
+/* Einblenden beim Scrollen */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('da');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+/* Anatomie */
+var S=[
+['Rolle und Auftrag','Wer bin ich, wofür bin ich da?','Rolle und Auftrag','Jeder Kollege weiß genau, wofür er zuständig ist und wofür nicht. Das verhindert, dass alle alles ein bisschen machen.','Konrad rechnet, aber er klickt nie selbst in Taifun. Das macht Arnold. Konrad übergibt ihm eine fertige Datei mit Sollsumme, Arnold meldet zurück, ob sie auf den Cent ankam.'],
+['Arbeitsanweisung','Wie gehe ich Schritt für Schritt vor?','Das Handwerk','Eine feste Reihenfolge, wie die Arbeit gemacht wird. So wie ein erfahrener Kalkulator einem Neuen zeigt, wie es bei uns läuft.','Unterlagen sichten, Mengen mit Planbezug ermitteln, Preise aus dem Preisspiegel, Transport und Logistik als eigene Pauschale, dann Texte prüfen: verständlich für den Nachunternehmer, prüfbar für den Bauherrn.'],
+['Grundregeln','Was gilt immer, egal was passiert?','Das Stammbuch','Die 26 Regeln für alle plus eigene Regeln der Rolle. Die stehen vor jeder Arbeit fest, auch wenn es mal schnell gehen soll.','Für Konrad gilt zusätzlich: Plan gleich Angebot. Und: kein Angebot zur Freigabe ohne Doppelcheck und Vergleich mit früheren Projekten.'],
+['Erfahrungswissen','Was ist schon mal schiefgegangen?','Die Fallen','Hier steht, was wir auf die harte Tour gelernt haben. Jeder Fehler wird einmal gemacht, dann steht er hier und kommt nicht wieder.','Weicht bei einer Stichprobe auch nur eine Menge ab, werden alle Unterlagen komplett neu durchgegangen. Auch wenn es länger dauert.'],
+['Gedächtnis','Was weiß ich über das Projekt?','Notizbuch und Preisgedächtnis','Der Kollege liest vor der Arbeit den aktuellen Stand des Projekts: offene Punkte, Zusagen, Entscheidungen. Und er kennt unsere Preise aus früheren Projekten.','Konrad weiß, was ein Quadratmeter Trockenbau bei den letzten Projekten wirklich gekostet hat. Nicht laut Internet, sondern laut unseren Nachkalkulationen.'],
+['Werkzeuge','Womit arbeite ich?','Fertige Rechenkerne','Statt jedes Mal neu zu basteln, gibt es fertige Programme. Aus einer Datenquelle entstehen alle Ausgaben, deshalb passt alles zusammen.','Aus einer einzigen Datei entstehen Angebots-PDF im Taifun-Layout, Excel-LV, GAEB-Datei für den Kunden und Taifun-Import. Ändert sich eine Menge, wandert sie überall mit.']];
+var sch=document.getElementById('sch'),si=document.getElementById('si');
+S.forEach(function(x,i){var b=document.createElement('button');b.type='button';b.innerHTML='<i>'+(i+1)+'</i><div>'+x[0]+'<small>'+x[1]+'</small></div>';b.onclick=function(){zs(i)};sch.appendChild(b)});
+function zs(i){[].forEach.call(sch.children,function(b,j){b.classList.toggle('an',i===j)});var x=S[i];si.classList.remove('neu');void si.offsetWidth;si.classList.add('neu');si.innerHTML='<small>Schicht '+(i+1)+' von 6</small><h3>'+x[2]+'</h3><p>'+x[3]+'</p><div class="bsp"><b>Beispiel Konrad</b>'+x[4]+'</div>'}
+zs(0);
+
+/* Cockpit: Zahlen hochzählen, Balken */
+var cp=document.getElementById('cp'),gez=false;
+new IntersectionObserver(function(es){if(es[0].isIntersecting&&!gez){gez=true;cp.classList.add('los');zaehl()}},{threshold:.3}).observe(cp);
+function zaehl(){cp.querySelectorAll('[data-z]').forEach(function(el){var z=parseFloat(el.dataset.z),e=el.dataset.e||'',t0=null,dez=z%1?2:0;function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1400);p=1-Math.pow(1-p,3);el.textContent=(z*p).toFixed(dez).replace('.',',')+e;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})}
+window.ans=function(c){cp.classList.toggle('kollm',!c);cp.classList.toggle('chefm',!!c);document.getElementById('a0').classList.toggle('an',!c);document.getElementById('a1').classList.toggle('an',!!c);document.getElementById('ansh').textContent=c?'Chef-Ansicht: alle Projekte, Volumen, Auslastung':'Kollegen-Ansicht: nur eigene Projekte, ohne Firmenzahlen';zaehl()};
+
+/* Ticker */
+var E=[['Konrad','Angebot Store Oberhausen fertig, liegt zur Freigabe bereit'],['Arnold','Bestellung Trockenbau in Taifun eingespielt, Summe stimmt auf den Cent'],['Anke','Erinnerung: NU-Zusage Optiker Frankfurt fehlt seit 4 Tagen'],['Ernst','Deckenspiegel Gastro Berlin, Stand 3 abgelegt'],['Hasso','Neues Projekt angelegt: Fitnessstudio Köln, Akte steht'],['Beate','Monatspaket Oktober geprüft, 2 Belege ohne Pflichtangaben'],['Anke','Nachtrag Elektro Gastro Berlin: Kunde hat noch nicht geantwortet'],['Konrad','Preisspiegel aktualisiert: Malerarbeiten +4 % gegenüber Sommer']];
+var tk=document.getElementById('tick'),ti=0,m=10*60+12;
+function neu(){var x=E[ti%E.length];ti++;m+=3+Math.floor(Math.random()*9);var d=document.createElement('div');d.className='te';d.innerHTML='<time>'+String(Math.floor(m/60)%24).padStart(2,'0')+':'+String(m%60).padStart(2,'0')+'</time><b>'+x[0]+':</b> '+x[1];tk.insertBefore(d,tk.firstChild);while(tk.children.length>4)tk.removeChild(tk.lastChild)}
+for(var k=0;k<3;k++)neu();setInterval(neu,3200);
+
+/* Frag das Cockpit */
+var F=[
+['Wie steht Hamburg?','Retail Hamburg ist in der Abrechnung.\nSchlussrechnung liegt als Entwurf vor, 2 Nachträge sind eingepreist, einer davon vom Kunden schriftlich bestätigt.\nOffen: Abnahmeprotokoll Elektro, fehlt seit 6 Tagen.','Quelle: Projekt-Notizbuch Hamburg, Stand heute 08:40'],
+['Welche Angebote warten auf mich?','3 Angebote warten auf Freigabe:\n· Store Oberhausen, rund 109.000 €, Doppelcheck grün\n· Fitnessstudio Köln, Kostenschätzung, rund 240.000 €\n· Gastro Berlin Nachtrag Elektro, 8.400 €','Quelle: Angebotsliste aller Projektleiter'],
+['Wo verlieren wir gerade Geld?','Ein Projekt fällt auf: Optiker Frankfurt.\nTrockenbau liegt in der Beauftragung 11 % über Kalkulation. Grund: Nachunternehmer gewechselt, alter hat abgesagt.\nVorschlag: Mehrkosten als Nachtrag prüfen, Planänderung vom 03.11. ist ein Ansatzpunkt.','Quelle: Soll/Ist Frankfurt, Nachkalkulation je Gewerk'],
+['Wer schuldet uns was?','4 offene Punkte bei Dritten:\n· NU Trockenbau Frankfurt: Terminzusage, seit 4 Tagen, 2× nachgefragt\n· Kunde Berlin: Freigabe Nachtrag, seit 9 Tagen\n· Kunde Hamburg: Abnahme Elektro, seit 6 Tagen\n· Lieferant Leuchten: Liefertermin, seit 2 Tagen','Quelle: Einfordern-Listen aller Projekt-Notizbücher'],
+['Was hat uns das Team im Oktober gekostet?','KI-Kosten Oktober rund 410 €.\nGrößte Posten: Kalkulation Köln und Werkplanung Hamburg.\nDem stehen rund 60 eingesparte Arbeitsstunden gegenüber, geschätzt aus den Projekt-Chroniken.','Quelle: Token-Uhr je Projekt · Werte geschätzt']];
+var fq=document.getElementById('fq'),fa=document.getElementById('fa'),tt=null;
+F.forEach(function(x,i){var b=document.createElement('button');b.type='button';b.textContent='„'+x[0]+'“';b.onclick=function(){[].forEach.call(fq.children,function(c,j){c.classList.toggle('an',i===j)});tipp(x)};fq.appendChild(b)});
+function tipp(x){clearInterval(tt);var t=x[1],n=0;fa.innerHTML='';tt=setInterval(function(){n+=3;fa.innerHTML=t.slice(0,n).replace(/</g,'&lt;')+'<span class="cur"></span>';if(n>=t.length){clearInterval(tt);fa.innerHTML=t.replace(/</g,'&lt;')+'<span class="q">'+x[2]+' · Beispieldaten</span>'}},18)}
+
+/* Potenzial */
+var P=[
+['Wissen sichern','Wenn einer geht, bleibt sein Wissen.','Wie wir kalkulieren, welche Nachunternehmer was taugen, welche Fallen es bei welchem Kunden gibt: Das steht in den Kollegen und Notizbüchern. Ein Personalwechsel tut dann weniger weh.','läuft schon'],
+['Einarbeitung','Neue Leute in Tagen statt Monaten.','Ein neuer Projektleiter bekommt am ersten Tag dasselbe Team wie alle anderen. Er arbeitet sofort nach unserem Standard, und das Team erklärt ihm unterwegs, wie es bei uns läuft.','Wochen'],
+['Mehr Angebote','Mehr Umsatzchancen ohne mehr Leute.','Ausschreibungen schneller sichten, Kostenschätzungen in Stunden. Wir können mehr Anfragen annehmen und früher entscheiden, wo es sich lohnt, ernsthaft zu rechnen.','läuft schon'],
+['Schneller abrechnen','Geld schneller auf dem Konto.','Schlussrechnung, Nachträge, Mehr- und Minderkosten aus denselben Daten wie das Angebot. Weniger Wochen zwischen Fertigstellung und Rechnung heißt bessere Liquidität.','Wochen'],
+['Filialketten als Vorlage','Filiale Nummer zehn in Stunden.','Bei Rahmenkunden mit vielen gleichen Läden wird jede fertige Filiale zur Vorlage. Pläne, Mengen und Preise der nächsten Filiale stehen fast von allein.','Wochen'],
+['Firmenweiter Preisspiegel','Unsere Preise, nicht die aus dem Internet.','Alle Nachunternehmer-Preise aus allen Projekten an einer Stelle. Wir sehen, wer teurer wird, und verhandeln mit Zahlen statt aus dem Bauch.','im Aufbau'],
+['Kundenportal','Der Kunde sieht selbst, wo sein Projekt steht.','Projektstand, Fotos, Revisionsunterlagen digital, sauber in Kriwet-Optik. Weniger Nachfragen, mehr Vertrauen, ein echter Unterschied im Markt.','Monate'],
+['Planungsbüro als Leistung','Was wir intern nutzen, auch verkaufen.','Kostenschätzung, Werkplanung, Bauzeitenplan als eigene Leistung für Kunden und Architekten. Die Seite „Für Kunden“ gibt es dafür schon.','Konzept'],
+['Sensible Daten im Haus','KI auf dem eigenen Rechner.','Für Daten, die nicht in die Cloud sollen, teste ich gerade eine KI, die lokal auf dem eigenen Rechner läuft. Kein Upload, volle Kontrolle.','Test']];
+var pot=document.getElementById('pot');
+P.forEach(function(x){var d=document.createElement('div');d.className='pk rv';d.innerHTML='<span class="zeit">'+x[3]+'</span><small>Potenzial</small><b>'+x[0]+'</b><span>'+x[1]+'</span><div class="mehr">'+x[2]+'</div>';d.onclick=function(){d.classList.toggle('auf')};pot.appendChild(d);io.observe(d)});
+
+/* Heute klären */
+var T=[
+['Wer bekommt das Team?','Welche Kollegen starten zuerst, wer ist Pilot neben mir.'],
+['Lizenzen und Budget','Welcher Claude-Plan für die Firma, welcher monatliche Rahmen für Rechenzeit.'],
+['Wer sieht welche Preise?','Einkaufspreise und Preisspiegel: für alle, nur Projektleiter oder nur Chef-Ebene.'],
+['Chef-Cockpit: erste Fassung','Was brauchst du zuerst? Vorschlag: Projektampel über alle Projekte und Montagsbericht.'],
+['Dashboard für die Kollegen','Gleiches Dashboard für alle, mit deiner Chef-Ebene obendrauf. Passt das so?'],
+['Ablage auf dem Server','Einheitlicher Standard für Projektordner, damit das Team überall gleich arbeitet.'],
+['Kundendaten und Datenschutz','Was darf in die Cloud, was bleibt im Haus.'],
+['Rückmeldung der Kollegen','Vorerst entwickle ich zentral. Wann sollen Erfahrungen der Kollegen zurückfließen?']];
+var td=document.getElementById('todo'),st={};
+try{st=JSON.parse(localStorage.getItem('dom-todo')||'{}')}catch(e){st={}}
+T.forEach(function(x,i){var d=document.createElement('div');d.className='td rv'+(st[i]?' ok':'');d.innerHTML='<div class="bx">'+(st[i]?'✓':'')+'</div><div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';d.onclick=function(){st[i]=!st[i];d.classList.toggle('ok',!!st[i]);d.firstChild.textContent=st[i]?'✓':'';try{localStorage.setItem('dom-todo',JSON.stringify(st))}catch(e){}};td.appendChild(d);io.observe(d)});
+
+/* Filme: einer spielt, der andere hält an */
+var a=document.getElementById('v'),b=document.getElementById('v3');
+a.addEventListener('play',function(){if(!b.paused)b.pause()});b.addEventListener('play',function(){if(!a.paused)a.pause()});
+})();
+
+</script>
+</body></html>
